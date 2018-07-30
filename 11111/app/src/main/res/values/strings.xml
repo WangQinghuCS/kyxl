@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">chronicdisease</string>
+    <string name="promptSBP">收缩压:</string>
+    <string name="promptDBP">舒张压:</string>
+    <string name="promptType">血压水平的分类:</string>
+    <string name="promptInput">promptInput</string>
+    <string name="thypertension">3级高血压（重度）</string>
+    <string name="shypertension">2级高血压（中度）</string>
+    <string name="fhypertension">1级高血压（较轻）</string>
+    <string name="regularHighWorth">正常高值</string>
+    <string name="regularPressure">正常血压</string>
+    <string name="sbpHypertension">单纯收缩期高血压</string>
+    <string-array name="danger_factor">
+        <item>男性＞55岁</item>
+        <item>女性＞65岁</item>
+        <item>吸烟</item>
+        <item>血脂异常</item>
+        <item>TC≥5.7mmol/L(220mg/dl)或LDL-C＞3.6mmol/L(140mg/dl)或HDL-C＜1.0mmol/L(40mg/dl)</item>
+        <item>早发心血管疾病家族史：一级亲属，发病年龄＜50岁</item>
+        <item>腹型肥胖或肥胖 腹型肥胖　WC男性≥85cm  女性≥80cm 肥胖     BMI≥28Kg/m2</item>
+        <item>缺乏体力活动</item>
+        <item>高敏C反应蛋白≥3mg/L或C反应蛋白≥10mg/L</item>
+    </string-array>
+</resources>
