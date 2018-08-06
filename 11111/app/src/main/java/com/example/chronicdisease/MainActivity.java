@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     private TextView txtTitle;
     private ImageView imgreturn;
     private LinearLayout baseElestical,yuhouElestical,healthManager,question,personInfo,settings;
-
+    //This is a test Tag for Git
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
