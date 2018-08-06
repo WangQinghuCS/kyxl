@@ -44,10 +44,9 @@
             android:id="@+id/danger_factor_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/danger_factor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="50dp" >
+            tools:layout_editor_absoluteY="50dp">
 
         </ListView>
     </LinearLayout>
