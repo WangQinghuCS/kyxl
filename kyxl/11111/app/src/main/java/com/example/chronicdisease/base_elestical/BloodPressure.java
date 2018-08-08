@@ -30,9 +30,7 @@ public class BloodPressure extends Activity {
     private ImageView imgReturn;
     private Button btnSubmit,pressure_continue;
     private boolean order=false;
-    private int pressure_level;
-    private Intent it = new Intent();
-
+    private boolean danger_flag=false;
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,15 +100,15 @@ public class BloodPressure extends Activity {
 
                         if((sbp>=180)||(dbp>=110)) {
                             strtype += "  " + getString(R.string.thypertension);
-                            pressure_level=3;
+                            danger_flag = true;
                         }
                         else if((sbp>=160&&sbp<=179)||(dbp>=100&&dbp<=109)) {
                             strtype += "  " + getString(R.string.shypertension);
-                            pressure_level=2;
+                            danger_flag = true;
                         }
                         else if((sbp>=140&&sbp<=159)||(dbp>=90&&dbp<=99)) {
                             strtype += "  " + getString(R.string.fhypertension);
-                            pressure_level=1;
+                            danger_flag = true;
                         }
                         else if((sbp>120&&sbp<=139)||(dbp>80&&dbp<=89))
                             strtype+="  "+getString(R.string.regularHighWorth);
@@ -133,14 +131,15 @@ public class BloodPressure extends Activity {
                 }
             }
         });
-
+        final Intent it = new Intent();
         it.setClass(this, NumOfDangerActivity.class);
         pressure_continue.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0) {
                 if (order == true) {
                     order = false;
-                    it.putExtra("pressure_level",pressure_level);
+                    it.putExtra("dangerflag", danger_flag); 
                     startActivity(it);
+                    danger_flag=false;
                 }
                 else{
                     Toast.makeText(BloodPressure.this,"请先测试血压", Toast.LENGTH_SHORT).show();
@@ -156,6 +155,7 @@ public class BloodPressure extends Activity {
             Intent it=new Intent();
             it.setClass(BloodPressure.this, MainActivity.class);
             startActivity(it);
+
         }
 
     }

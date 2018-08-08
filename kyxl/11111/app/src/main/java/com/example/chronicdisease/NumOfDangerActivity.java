@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,14 +24,6 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
     //ArrayList<Integer> selected_position = new ArrayList<>();
     private TextView num_of_factor_txv;
     private Context context;
-    private Button go_check_tod;
-    private int num_of_danger;
-    private int pressure_level;
-    private Intent it = new Intent();
-
-    public int getNum_of_danger() {
-        return num_of_danger;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,36 +37,28 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         lv.setOnItemClickListener(this);
+        Intent it = getIntent();
+        boolean danger_flag = it.getBooleanExtra("dangerflag", false);
+        //Toast.makeText(NumOfDangerActivity.this,danger_flag+"", Toast.LENGTH_SHORT).show();
+        if (danger_flag) {
+            selected.add("高血压");
+        }
         num_of_factor_txv = findViewById(R.id.num_of_factorTxv);  //must below the setContentView
         num_of_factor_txv.setText(selected.size() + "");
-        go_check_tod=findViewById(R.id.go_check_tod);
-        Intent get=getIntent();
-        pressure_level=get.getIntExtra("pressure_level",0);
-        it.setClass(this, CheckTOActivity.class);
-        go_check_tod.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0) {
-                it.putExtra("pressure_level",pressure_level);
-                it.putExtra("num_of_danger", num_of_danger);
-                startActivity(it);
-            }
-        });
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         num_of_factor_txv = findViewById(R.id.num_of_factorTxv);
         TextView txv = (TextView) view;
+        //todo change the color of selected items
         String item = txv.getText().toString();
         if (selected.contains(item)) {
             selected.remove(item);
         } else {
             selected.add(item);
         }
-        if (selected.size() > 0) {
+        if (selected.size() > 0)
             num_of_factor_txv.setText(selected.size() + "");
-            num_of_danger=selected.size();
-        }
-        else {
+        else
             num_of_factor_txv.setText("0");
-            num_of_danger = selected.size();
-        }
     }
 }
