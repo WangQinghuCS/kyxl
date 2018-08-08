@@ -16,52 +16,58 @@ import android.widget.Toast;
 import com.example.chronicdisease.base_elestical.BloodPressure;
 
 import org.w3c.dom.Text;
+import org.w3c.dom.ls.LSException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NumOfDangerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class CheckDiabetesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ArrayList<String> selected = new ArrayList<>();
     //ArrayList<Integer> selected_position = new ArrayList<>();
-    private TextView num_of_factor_txv;
+    private TextView num_of_diabetesTxv;
     private Context context;
-    private Button go_check_tod;
-    private int num_of_danger;
+    private ListView lv;
+    private Button go_ACC;
     private int pressure_level;
+    private int num_of_danger;
+    private boolean TOD;
+    private boolean Diabetes;
     private Intent it = new Intent();
 
-    public int getNum_of_danger() {
-        return num_of_danger;
+    public boolean isDiabetes() {
+        return Diabetes;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_num_of_danger);
-        final String[] mItems1 = {"男性>55岁","女性＞65岁","吸烟","血脂异常",
-                "早发心血管疾病家族史","腹型肥胖或肥胖",
-                "缺乏体力活动","高敏C反应蛋白≥3mg/L或C反应蛋白≥10mg/L"};
-        ListView lv = (ListView) findViewById(R.id.danger_factor_lv);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.num_of_danger_item,mItems1);
+        setContentView(R.layout.activity_check_diabetes);
+        final String[] mItems3 = {"空腹血糖≥7.0mmol/L","餐后血糖≥11.1mmol/L"};
+        lv = (ListView) findViewById(R.id.diabetes_lv);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.check_diabetes_item,mItems3);
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         lv.setOnItemClickListener(this);
-        num_of_factor_txv = findViewById(R.id.num_of_factorTxv);  //must below the setContentView
-        num_of_factor_txv.setText(selected.size() + "");
-        go_check_tod=findViewById(R.id.go_check_tod);
+        num_of_diabetesTxv = findViewById(R.id.num_of_diabetesTxv);  //must below the setContentView
+        num_of_diabetesTxv.setText(selected.size() + "");
+        go_ACC=findViewById(R.id.go_ACC);
         Intent get=getIntent();
         pressure_level=get.getIntExtra("pressure_level",0);
-        it.setClass(this, CheckTOActivity.class);
-        go_check_tod.setOnClickListener(new View.OnClickListener(){
+        num_of_danger=get.getIntExtra("num_of_danger",0);
+        TOD=get.getBooleanExtra("TOD",false);
+        it.setClass(this, CheckACCActivity.class);
+        go_ACC.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0) {
-                it.putExtra("pressure_level",pressure_level);
+                it.putExtra("pressure_level", pressure_level);
                 it.putExtra("num_of_danger", num_of_danger);
+                it.putExtra("TOD", TOD);
+                it.putExtra("Diabetes", Diabetes);
                 startActivity(it);
             }
         });
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        num_of_factor_txv = findViewById(R.id.num_of_factorTxv);
+        num_of_diabetesTxv = findViewById(R.id.num_of_diabetesTxv);
         TextView txv = (TextView) view;
         String item = txv.getText().toString();
         if (selected.contains(item)) {
@@ -70,12 +76,13 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
             selected.add(item);
         }
         if (selected.size() > 0) {
-            num_of_factor_txv.setText(selected.size() + "");
-            num_of_danger=selected.size();
+            num_of_diabetesTxv.setText(selected.size() + "");
+            Diabetes = true;
         }
         else {
-            num_of_factor_txv.setText("0");
-            num_of_danger = selected.size();
+            num_of_diabetesTxv.setText("0");
+            Diabetes = false;
         }
     }
+
 }

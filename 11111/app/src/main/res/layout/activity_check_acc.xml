@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/go_check_tod"
+            android:id="@+id/go_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="继续" />
@@ -21,9 +21,9 @@
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="请点击下方您符合的条件\n点击继续进行靶器官检测"
+            android:text="请点击下方您符合的条件\n点击继续查看危险等级"
             android:textSize="24sp"
-            tools:text="请点击下方您符合的条件\n点击继续进行靶器官检测" />
+            tools:text="请点击下方您符合的条件\n点击继续查看危险等级" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/num_of_factorTxv"
+                android:id="@+id/num_of_ACCTxv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -47,7 +47,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/danger_factor_lv"
+            android:id="@+id/ACC_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"

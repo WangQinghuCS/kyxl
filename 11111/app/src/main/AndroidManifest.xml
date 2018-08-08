@@ -12,37 +12,23 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".yuhouelestical.YuhouElestical">
-        </activity>
-
-        <activity android:name=".base_elestical.BaseElestical">
-        </activity>
-
-        <activity android:name=".base_elestical.BloodPressure">
-        </activity>
-
-        <activity android:name=".base_elestical.Bloodsugar">
-        </activity>
-
-        <activity android:name=".base_elestical.bloodfat_input">
-        </activity>
-
-        <activity android:name=".base_elestical.bloodfat_assess">
-        </activity>
-
-        <activity android:name=".base_elestical.Whestimate">
-        </activity>
-
-        <activity android:name=".base_elestical.DangerBmi">
-        </activity>
-
-        <activity android:name=".NumOfDangerActivity">
-        </activity>
-
+        <activity android:name=".yuhouelestical.YuhouElestical" />
+        <activity android:name=".base_elestical.BaseElestical" />
+        <activity android:name=".base_elestical.BloodPressure" />
+        <activity android:name=".base_elestical.Bloodsugar" />
+        <activity android:name=".base_elestical.bloodfat_input" />
+        <activity android:name=".base_elestical.bloodfat_assess" />
+        <activity android:name=".base_elestical.Whestimate" />
+        <activity android:name=".base_elestical.DangerBmi" />
+        <activity android:name=".NumOfDangerActivity" />
+        <activity android:name=".CheckTOActivity" />
+        <activity android:name=".CheckDiabetesActivity" />
+        <activity android:name=".CheckACCActivity" />
+        <activity android:name=".ShowResultActivity"></activity>
     </application>
 
 </manifest>
