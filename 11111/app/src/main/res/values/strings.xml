@@ -10,4 +10,38 @@
     <string name="regularHighWorth">正常高值</string>
     <string name="regularPressure">正常血压</string>
     <string name="sbpHypertension">单纯收缩期高血压</string>
+    <string name="A_1">测量血压：每3个月至少一次</string>
+    <string name="A_2">测量血压：每2个月至少一次</string>
+    <string name="A_3">测量血压：每1个月至少一次</string>
+    <string name="B">了解患者自觉症状:做</string>
+    <string name="C_1">测量体重:每6个月一次</string>
+    <string name="C_2">测量体重:每3个月一次</string>
+    <string name="D">非药物治疗:做</string>
+    <string name="E_1">药物治疗:6-12个月后血压>=150/95mmHg时开始</string>
+    <string name="E_2">药物治疗:3-6个月后血压>=150/95mmHg时开始</string>
+    <string name="E_3">药物治疗:立即开始,作为主要治疗手段,根据情况调整强度和力度</string>
+    <string name="F_1">测量血脂:每2-3年一次</string>
+    <string name="F_2">测量血脂:每年一次</string>
+    <string name="G_1">测量空腹血糖:每2-3年一次</string>
+    <string name="G_2">测量空腹血糖:每年一次</string>
+    <string name="H_1">检验血常规:每2-3年一次</string>
+    <string name="H_2">检验血常规:每年一次</string>
+    <string name="H_3">检验血常规:每年至少一次,并视病情决定检测频度</string>
+    <string name="I_1">检测尿常规:每2-3年一次</string>
+    <string name="I_2">检测尿常规:每年一次</string>
+    <string name="I_3">检测尿常规:每年至少一次,并视病情决定检测频度</string>
+    <string name="L_1">心电图检测:每2-3年一次</string>
+    <string name="L_2">心电图检测:每年一次</string>
+    <string name="L_3">心电图检测:每年至少一次,并视病情决定检测频度</string>
+    <string name="M_1">肾功能检查:每2-3年一次</string>
+    <string name="M_2">肾功能检查:每年一次</string>
+    <string name="M_3">肾功能检查:每年至少一次,并视病情决定检测频度</string>
+    <string name="N_1">眼底检查:每2-3年一次</string>
+    <string name="N_2">眼底检查:每2年一次</string>
+    <string name="N_3">眼底检查:每2年至少一次,并视病情决定检测频度</string>
+    <string name="O_2">超声心动图检查:每2年一次</string>
+    <string name="O_3">超声心动图检查:每2年至少一次,并视病情决定检测频度</string>
+    <string name="first_level">您处于一级管理</string>
+    <string name="second_level">您处于二级管理</string>
+    <string name="third_level">您处于三级管理</string>
 </resources>
