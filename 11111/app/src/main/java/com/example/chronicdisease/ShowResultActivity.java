@@ -3,6 +3,10 @@ package com.example.chronicdisease;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ShowResultActivity extends AppCompatActivity {
@@ -15,6 +19,8 @@ public class ShowResultActivity extends AppCompatActivity {
             tod_resultTxv,diabetes_resultTxv,ACC_resultTxv,danger_levelTxv;
     private final String DangerLevel[] = {"低危", "中危", "高危", "很高危"};
     private int result_index;
+    private Button go_manage;
+    private Intent manage =  new Intent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +37,7 @@ public class ShowResultActivity extends AppCompatActivity {
         diabetes_resultTxv = findViewById(R.id.diabetes_resultTxv);
         ACC_resultTxv = findViewById(R.id.ACC_resultTxv);
         danger_levelTxv = findViewById(R.id.danger_levelTxv);
+        go_manage = findViewById(R.id.go_manage);
         //set text
         pressure_level_resultTXV.setText("血压等级为:" + pressure_level);
         num_of_danger_resultTxv.setText("危险因素个数为:" + num_of_danger);
@@ -70,5 +77,16 @@ public class ShowResultActivity extends AppCompatActivity {
             }
         }
         danger_levelTxv.setText("危险等级为:"+DangerLevel[result_index]);
+
+        manage.setClass(this,CheckManageActivity.class);
+        go_manage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+            manage.putExtra("level", result_index);
+            Log.d("result_index",Integer.toString(result_index));
+            startActivity(manage);
+            }
+        });
     }
+
+
 }
