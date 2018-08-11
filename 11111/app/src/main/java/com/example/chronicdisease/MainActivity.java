@@ -90,7 +90,7 @@ public class MainActivity extends Activity {
         public void onClick(View arg0) {
             // TODO Auto-generated method stub
             Intent it2=new Intent();
-            it2.setClass(MainActivity.this, YuhouElestical.class);
+            it2.setClass(MainActivity.this, CheckPressLevelActivity.class);
             startActivity(it2);
             overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
         }

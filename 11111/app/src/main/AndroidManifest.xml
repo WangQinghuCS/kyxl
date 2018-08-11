@@ -28,8 +28,9 @@
         <activity android:name=".CheckTOActivity" />
         <activity android:name=".CheckDiabetesActivity" />
         <activity android:name=".CheckACCActivity" />
-        <activity android:name=".CheckManageActivity"/>
-        <activity android:name=".ShowResultActivity"></activity>
+        <activity android:name=".CheckManageActivity" />
+        <activity android:name=".ShowResultActivity" />
+        <activity android:name=".CheckPressLevelActivity"></activity>
     </application>
 
 </manifest>

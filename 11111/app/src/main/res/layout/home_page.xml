@@ -77,7 +77,8 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="预后及管理"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
