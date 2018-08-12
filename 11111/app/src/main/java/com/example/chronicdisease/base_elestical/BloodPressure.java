@@ -28,10 +28,7 @@ public class BloodPressure extends Activity {
     private String strtype;
     private ImageView backHome;
     private ImageView imgReturn;
-    private Button btnSubmit,pressure_continue;
-    private boolean order=false;
-    private int pressure_level;
-    private Intent it = new Intent();
+    private Button btnSubmit;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -41,8 +38,8 @@ public class BloodPressure extends Activity {
         setContentView(R.layout.activity_bloodpressure);
         backHome=(ImageView)findViewById(R.id.backHome);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
-        backHome.setImageResource(R.drawable.pic_1);
-        imgReturn.setImageResource(R.drawable.pic_2);
+        backHome.setImageResource(R.drawable.home);
+        imgReturn.setImageResource(R.drawable.gonext);
         edtSBP = (EditText) findViewById(R.id.edtSBP);
         edtDBP = (EditText) findViewById(R.id.edtDBP);
         txtSBP=(TextView)findViewById(R.id.txtSBP);
@@ -53,7 +50,6 @@ public class BloodPressure extends Activity {
         backHome.setOnClickListener(new backHomeLis());
         imgReturn.setOnClickListener(new imgReturnLis());
         btnSubmit = (Button)findViewById(R.id.btnSubmit);
-        pressure_continue = (Button) findViewById(R.id.pressure_continue);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
@@ -102,15 +98,12 @@ public class BloodPressure extends Activity {
 
                         if((sbp>=180)||(dbp>=110)) {
                             strtype += "  " + getString(R.string.thypertension);
-                            pressure_level=3;
                         }
                         else if((sbp>=160&&sbp<=179)||(dbp>=100&&dbp<=109)) {
                             strtype += "  " + getString(R.string.shypertension);
-                            pressure_level=2;
                         }
                         else if((sbp>=140&&sbp<=159)||(dbp>=90&&dbp<=99)) {
                             strtype += "  " + getString(R.string.fhypertension);
-                            pressure_level=1;
                         }
                         else if((sbp>120&&sbp<=139)||(dbp>80&&dbp<=89))
                             strtype+="  "+getString(R.string.regularHighWorth);
@@ -124,8 +117,7 @@ public class BloodPressure extends Activity {
                         txtType.setText(strtype+"。 点击继续明确有无其他心血管疾病危险因素");
 
                     }}
-                    order=true;
-            }
+                               }
             else{
                     Toast.makeText(BloodPressure.this,
                             getString(R.string.promptInput),
@@ -134,19 +126,6 @@ public class BloodPressure extends Activity {
             }
         });
 
-        it.setClass(this, NumOfDangerActivity.class);
-        pressure_continue.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0) {
-                if (order == true) {
-                    order = false;
-                    it.putExtra("pressure_level",pressure_level);
-                    startActivity(it);
-                }
-                else{
-                    Toast.makeText(BloodPressure.this,"请先测试血压", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     class backHomeLis implements View.OnClickListener{
