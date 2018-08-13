@@ -19,7 +19,7 @@
     <string name="D">非药物治疗:做</string>
     <string name="E_1">药物治疗:6-12个月后血压>=150/95mmHg时开始</string>
     <string name="E_2">药物治疗:3-6个月后血压>=150/95mmHg时开始</string>
-    <string name="E_3">药物治疗:立即开始,作为主要治疗手段,根据情况调整强度和力度</string>
+    <string name="E_3">药物治疗:立即开始,作为主要治疗手段,根据情况调整强度</string>
     <string name="F_1">测量血脂:每2-3年一次</string>
     <string name="F_2">测量血脂:每年一次</string>
     <string name="G_1">测量空腹血糖:每2-3年一次</string>

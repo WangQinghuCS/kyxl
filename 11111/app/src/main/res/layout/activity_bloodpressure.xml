@@ -6,111 +6,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        android:id="@+id/edtSBP"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:hint="请输入收缩压"
-        app:layout_constraintBottom_toTopOf="@+id/edtDBP"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <EditText
+            <ImageView
+                android:id="@+id/backHome"
+                android:layout_width="34dp"
+                android:layout_height="47dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/home" />
 
-        android:id="@+id/edtDBP"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:hint="请输入舒张压"
-        app:layout_constraintBottom_toTopOf="@+id/txtSBP"
-        app:layout_constraintEnd_toEndOf="@+id/edtSBP"
-        app:layout_constraintStart_toStartOf="@+id/edtSBP" />
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="TextView"
+                android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/txtSBP"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtDBP"
-        app:layout_constraintEnd_toEndOf="@+id/edtDBP"
-        app:layout_constraintStart_toStartOf="@+id/edtDBP" />
+            <ImageView
+                android:id="@+id/imgReturn"
+                android:layout_width="11dp"
+                android:layout_height="47dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gonext" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtDBP"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtType"
-        app:layout_constraintEnd_toEndOf="@+id/txtSBP"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txtType"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
-        app:layout_constraintEnd_toEndOf="@+id/txtDBP"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toStartOf="@+id/txtDBP" />
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="收缩压:"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="195dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+            <EditText
 
-    <ImageView
-        android:id="@+id/imgReturn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:srcCompat="@android:color/holo_red_dark" />
+                android:id="@+id/edtSBP"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入收缩压(mmHg)"
+                app:layout_constraintBottom_toTopOf="@+id/edtDBP"
+                tools:layout_editor_absoluteX="92dp" />
 
-    <ImageView
-        android:id="@+id/backHome"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:srcCompat="@android:color/background_dark" />
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmHg"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/pressure_continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:layout_marginStart="216dp"
-        android:text="继续"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:layout_marginStart="76dp"
-        android:text="开始分析"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="舒张压:"
+                android:textSize="20sp" />
+
+            <EditText
+
+                android:id="@+id/edtDBP"
+                android:layout_width="224dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入舒张压(mmHg)"
+                app:layout_constraintBottom_toTopOf="@+id/txtSBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtSBP"
+                app:layout_constraintStart_toStartOf="@+id/edtSBP" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmHg"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/txtSBP"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtDBP"
+            app:layout_constraintEnd_toEndOf="@+id/edtDBP"
+            app:layout_constraintStart_toStartOf="@+id/edtDBP" />
+
+        <TextView
+            android:id="@+id/txtDBP"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtType"
+            app:layout_constraintEnd_toEndOf="@+id/txtSBP"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+
+        <TextView
+            android:id="@+id/txtType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="@+id/txtDBP"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="@+id/txtDBP" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开始分析"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="343dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
