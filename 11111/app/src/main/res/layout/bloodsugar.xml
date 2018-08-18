@@ -1,91 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_weight="1"
 
-    <EditText
+    android:orientation="vertical">
 
-        android:id="@+id/sugareditText1"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:hint="edtBMP"
-        app:layout_constraintBottom_toTopOf="@+id/sugareditText2"
-        app:layout_constraintEnd_toEndOf="@+id/sugareditText2"
-        app:layout_constraintStart_toStartOf="@+id/sugareditText2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:orientation="horizontal">
 
-    <EditText
 
-        android:id="@+id/sugareditText2"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:hint="edtATH"
-        app:layout_constraintBottom_toTopOf="@+id/sugarresult1"
-        app:layout_constraintEnd_toEndOf="@+id/sugarresult1"
-        app:layout_constraintStart_toStartOf="@+id/sugarresult1" />
+        <ImageView
+            android:id="@+id/imgReturn"
+            android:layout_width="50dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:src="@drawable/gonext"
+            />
 
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textColor="#e2a617"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="11dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="空腹测量:"
+            android:textSize="20sp" />
+
+        <EditText
+
+            android:id="@+id/sugareditText1"
+            android:layout_weight="1.5"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="请输入空腹测量浓度"
+            app:layout_constraintBottom_toTopOf="@+id/sugareditText2"
+            app:layout_constraintEnd_toEndOf="@+id/sugareditText2"
+            app:layout_constraintStart_toStartOf="@+id/sugareditText2"  />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="mmol/L"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="餐后2h:"
+            android:textSize="20sp" />
+
+        <EditText
+
+            android:id="@+id/sugareditText2"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="请输入餐后2h测量浓度"
+            app:layout_constraintBottom_toTopOf="@+id/sugarresult1"
+            app:layout_constraintEnd_toEndOf="@+id/sugarresult1"
+            app:layout_constraintStart_toStartOf="@+id/sugarresult1" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="mmol/L"
+            android:textSize="20sp" />
+
+    </LinearLayout>
     <TextView
         android:id="@+id/sugarresult1"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/suagribtn1"
-        app:layout_constraintEnd_toEndOf="@+id/suagribtn1"
-        app:layout_constraintStart_toStartOf="@+id/suagribtn1" />
-
-    <Button
-        android:id="@+id/suagribtn1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/view4" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="408dp"
-        android:layout_height="601dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imgReturn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:srcCompat="@android:color/holo_red_dark" />
-
-    <ImageView
-        android:id="@+id/backHome"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:srcCompat="@android:color/background_dark" />
-
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        />
+    <!--<LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:layout_constraintTop_toTopOf="@+id/view4" />
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtSBP"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtDBP"
+            app:layout_constraintEnd_toEndOf="@+id/edtDBP"
+            app:layout_constraintStart_toStartOf="@+id/edtDBP" />
+
+        <TextView
+            android:id="@+id/txtDBP"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtType"
+            app:layout_constraintEnd_toEndOf="@+id/txtSBP"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+
+        <TextView
+            android:id="@+id/txtType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="@+id/txtDBP"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="@+id/txtDBP" />
+    </LinearLayout>
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/suagribtn1"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+
+            android:text="开始分析"
+            android:background="#e2a617"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#f5f5f5"
+
+        android:gravity="center_vertical"
+        android:stretchColumns="0,1,2,3">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/backHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="首页" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="管理" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="设置" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

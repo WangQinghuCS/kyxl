@@ -18,8 +18,8 @@ import android.widget.TextView;
 public class bloodfat_assess extends Activity
 {
     private Button btnReturn;
-    private ImageView imaBack_home,imaReturn;
-    private TextView txtresult1;
+    private ImageView imaReturn;
+    private TextView txtresult1,imaBack_home;
     private TextView txtresult2;
     private TextView txtresult3;
     private TextView txtresult4;
@@ -74,10 +74,10 @@ public class bloodfat_assess extends Activity
         txtresult4=(TextView)findViewById(R.id.textView4);
         txtresult5=(TextView)findViewById(R.id.textView5);
         txtresult6=(TextView)findViewById(R.id.textView6);
-        imaBack_home=(ImageView)findViewById(R.id.backHome);
-        imaBack_home.setImageResource(R.drawable.pic_1);
+        imaBack_home=(TextView) findViewById(R.id.backHome);
+        //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.pic_2);
+        imaReturn.setImageResource(R.drawable.gonext);
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtTitle.setText("检测结果");
         imaBack_home.setOnClickListener(new backHomeLis());

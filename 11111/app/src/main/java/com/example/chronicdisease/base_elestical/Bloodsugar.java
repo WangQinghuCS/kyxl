@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 public class Bloodsugar extends Activity {
     private Button btnSubmit56;
-    private ImageView imaBack_home,imaReturn;
+    private ImageView imaReturn;
     private EditText edtBMP,edtATH;
-    private TextView result,txtTitle;
+    private TextView result,txtTitle,imaBack_home;
     private float BMP,ATH;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -34,10 +34,10 @@ public class Bloodsugar extends Activity {
         edtBMP=(EditText)findViewById(R.id.sugareditText1);
         edtATH=(EditText)findViewById(R.id.sugareditText2);
         result=(TextView)findViewById(R.id.sugarresult1);
-        imaBack_home=(ImageView)findViewById(R.id.backHome);
-        imaBack_home.setImageResource(R.drawable.pic_1);
+        imaBack_home=(TextView) findViewById(R.id.backHome);
+        //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn =(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.pic_2);
+        imaReturn.setImageResource(R.drawable.gonext);
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtTitle.setText("血糖检测");
         btnSubmit56.setOnClickListener(btnSubmitOnClick);
