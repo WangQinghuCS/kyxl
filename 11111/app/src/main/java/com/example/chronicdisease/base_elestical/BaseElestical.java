@@ -16,8 +16,9 @@ import com.example.chronicdisease.R;
 public class BaseElestical extends Activity {
     private Button txtBloodPressure,txtBloodSugar,txtBloodFat,txtWeight;
     private TextView txtTitle;
-    private ImageView backHome;
-    private ImageView imgReturn;
+    private TextView backHome;
+   // private ImageView backHome;
+    //private ImageView imgReturn;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -31,10 +32,10 @@ public class BaseElestical extends Activity {
     private void setupViewComponent(){
 
         txtTitle=(TextView)findViewById(R.id.txtTitle);
-        backHome=(ImageView)findViewById(R.id.backHome);
-        imgReturn=(ImageView)findViewById(R.id.imgReturn);
-        backHome.setImageResource(R.drawable.pic_1);
-        imgReturn.setImageResource(R.drawable.pic_2);
+        backHome=(TextView)findViewById(R.id.home);
+        //imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        //backHome.setImageResource(R.drawable.pic_1);
+        //imgReturn.setImageResource(R.drawable.pic_2);
 
         txtBloodPressure=(Button)findViewById(R.id.txtBloodPressure);
         txtBloodSugar=(Button)findViewById(R.id.txtBloodSugar);
@@ -43,7 +44,7 @@ public class BaseElestical extends Activity {
 
         txtTitle.setText("基本评估");
         backHome.setOnClickListener(new backHomeLis());
-        imgReturn.setOnClickListener(new imgReturnLis());
+        //imgReturn.setOnClickListener(new imgReturnLis());
         txtBloodPressure.setOnClickListener(new bloodPressureLis());
         txtBloodSugar.setOnClickListener(new bloodSugarLis());
         txtBloodFat.setOnClickListener(new bloodFatLis());
@@ -63,7 +64,7 @@ public class BaseElestical extends Activity {
         }
 
     }
-    class imgReturnLis  implements View.OnClickListener{
+    /*class imgReturnLis  implements View.OnClickListener{
 
         public void onClick(View arg0) {
             // TODO Auto-generated method stub
@@ -72,7 +73,7 @@ public class BaseElestical extends Activity {
 
         }
     }
-
+*/
     class bloodPressureLis implements View.OnClickListener{
 
         public void onClick(View arg0) {

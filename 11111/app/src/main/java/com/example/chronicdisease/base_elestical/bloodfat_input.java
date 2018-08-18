@@ -22,9 +22,9 @@ import android.widget.Toast;
 public class bloodfat_input extends Activity
 {
     private Button btnSubmit;
-    private ImageView imaBack_home,imaReturn;
+    private ImageView imaReturn;
     private EditText edtTC,edtLDL_C,edtHDL_C,edtTG;
-    private TextView txtTitle,txtTC,txtLDL_C,txtHDL_C,txtTG;
+    private TextView txtTitle,imaBack_home,txtTC,txtLDL_C,txtHDL_C,txtTG;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -38,10 +38,10 @@ public class bloodfat_input extends Activity
         edtHDL_C=(EditText)findViewById(R.id.editText3);
         edtTG=(EditText)findViewById(R.id.editText4);
         txtTitle=(TextView)findViewById(R.id.txtTitle);
-        imaBack_home=(ImageView)findViewById(R.id.backHome);
-        imaBack_home.setImageResource(R.drawable.pic_1);
+        imaBack_home=(TextView) findViewById(R.id.backHome);
+        //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.pic_2);
+        imaReturn.setImageResource(R.drawable.gonext);
         txtTitle.setText("输入指标");
         imaBack_home.setOnClickListener(new backHomeLis());
         imaReturn.setOnClickListener(new imgReturnLis());
