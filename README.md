@@ -7,17 +7,15 @@
 
 __首页__
 
-![首页](C:\Users\Sydney\Desktop\科研训练\}ZN@AAAIFM0BI8TOY9H4D39.png)
+![](https://i.loli.net/2018/08/19/5b7927f49cbfa.png)
 
 __基础评估__
 
-![](C:\Users\Sydney\Desktop\科研训练\%JK@~0F{5KN6MXZQOK~EV[E.png)
-
-
+![](https://i.loli.net/2018/08/19/5b7927f4a655c.png)
 
 __血压评估__
 
-![](C:\Users\Sydney\Desktop\科研训练\VSSG~SL6O57OBLSA14_%JEP.png)
+![](https://i.loli.net/2018/08/19/5b7927f4a6f34.png)
 
 # TODO:
 
