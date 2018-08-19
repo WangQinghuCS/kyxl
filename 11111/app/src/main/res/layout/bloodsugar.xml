@@ -22,26 +22,25 @@ android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imgReturn"
-            android:layout_width="50dp"
+            android:layout_width="0dp"
             android:layout_height="47dp"
             android:layout_weight="1"
-            android:src="@drawable/gonext"
-            />
+            android:src="@drawable/gonext" />
 
         <TextView
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:textColor="#e2a617"
+            android:gravity="center_vertical|center_horizontal"
             android:text="TextView"
+            android:textColor="#e2a617"
             android:textSize="24sp" />
 
         <TextView
-            android:layout_width="11dp"
-            android:layout_height="47dp"
-            android:layout_weight="1"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout

@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,8 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
     //ArrayList<Integer> selected_position = new ArrayList<>();
     private TextView num_of_factor_txv;
     private Context context;
-    private Button go_check_tod;
+    private TextView txtTitle;
+    private ImageView imgReturn,imgGonext;
     private int num_of_danger;
     private int pressure_level;
     private Intent it = new Intent();
@@ -38,6 +40,12 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_num_of_danger);
+        imgGonext=(ImageView) findViewById(R.id.imgGonext);
+        imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        imgGonext.setOnClickListener(new Gonext());
+        imgReturn.setOnClickListener(new imgReturnLis());
+        txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("危险因素");
         final String[] mItems1 = {"男性>55岁","女性＞65岁","吸烟","血脂异常",
                 "早发心血管疾病家族史","腹型肥胖或肥胖",
                 "缺乏体力活动","高敏C反应蛋白≥3mg/L或C反应蛋白≥10mg/L"};
@@ -48,17 +56,8 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
         lv.setOnItemClickListener(this);
         num_of_factor_txv = findViewById(R.id.num_of_factorTxv);  //must below the setContentView
         num_of_factor_txv.setText(selected.size() + "");
-        go_check_tod=findViewById(R.id.go_check_tod);
         Intent get=getIntent();
         pressure_level=get.getIntExtra("pressure_level",0);
-        it.setClass(this, CheckTOActivity.class);
-        go_check_tod.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0) {
-                it.putExtra("pressure_level",pressure_level);
-                it.putExtra("num_of_danger", num_of_danger);
-                startActivity(it);
-            }
-        });
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         num_of_factor_txv = findViewById(R.id.num_of_factorTxv);
@@ -76,6 +75,25 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
         else {
             num_of_factor_txv.setText("0");
             num_of_danger = selected.size();
+        }
+    }
+    class Gonext implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            it.setClass(NumOfDangerActivity.this, CheckTOActivity.class);
+            it.putExtra("pressure_level",pressure_level);
+            it.putExtra("num_of_danger", num_of_danger);
+            startActivity(it);
+        }
+
+    }
+    class imgReturnLis  implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            finish();
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
     }
 }
