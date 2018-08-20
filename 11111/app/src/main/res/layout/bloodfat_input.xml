@@ -6,96 +6,247 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
 
-        android:id="@+id/editText3"
-        android:layout_width="223dp"
-        android:layout_height="38dp"
-        android:hint=" edtHDL_C"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
-        app:layout_constraintEnd_toEndOf="@+id/editText4"
-        app:layout_constraintStart_toStartOf="@+id/editText4" />
+        android:orientation="vertical">
 
-    <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:orientation="horizontal">
 
-        android:id="@+id/editText2"
-        android:layout_width="223dp"
-        android:layout_height="38dp"
-        android:hint="edtLDL_C"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3" />
 
-    <EditText
+            <ImageView
+                android:id="@+id/imgReturn"
+                android:layout_width="0dp"
+                android:layout_height="47dp"
+                android:layout_weight="1"
+                android:src="@drawable/gonext" />
 
-        android:id="@+id/editText4"
-        android:layout_width="223dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="60dp"
-        android:hint=" edtTG"
-        app:layout_constraintBottom_toTopOf="@+id/button1"
-        app:layout_constraintEnd_toEndOf="@+id/button1"
-        app:layout_constraintStart_toStartOf="@+id/button1" />
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="TextView"
+                android:textColor="#e2a617"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="223dp"
-        android:layout_height="38dp"
-        android:hint="edtTC"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="170dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <View
-        android:id="@+id/view5"
-        android:layout_width="408dp"
-        android:layout_height="602dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgReturn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:srcCompat="@android:color/holo_red_dark" />
 
-    <ImageView
-        android:id="@+id/backHome"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:srcCompat="@android:color/background_dark" />
+            <EditText
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
+                android:id="@+id/editText1"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入胆固醇TC"
+                app:layout_constraintBottom_toTopOf="@+id/edtDBP"
+                tools:layout_editor_absoluteX="92dp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmHg"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+
+                android:id="@+id/editText2"
+                android:layout_width="224dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入低密度脂蛋白胆固醇LDL_C"
+                app:layout_constraintBottom_toTopOf="@+id/txtSBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtSBP"
+                app:layout_constraintStart_toStartOf="@+id/edtSBP" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmHg"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+
+                android:id="@+id/editText3"
+                android:layout_width="224dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入高密度脂蛋白胆固醇LHDL_C"
+                app:layout_constraintBottom_toTopOf="@+id/txtSBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtSBP"
+                app:layout_constraintStart_toStartOf="@+id/edtSBP" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmol/L"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+
+                android:id="@+id/editText4"
+                android:layout_width="224dp"
+                android:layout_height="50dp"
+                android:layout_weight="1.5"
+                android:hint="请输入甘油三酯TG"
+                app:layout_constraintBottom_toTopOf="@+id/txtSBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtSBP"
+                app:layout_constraintStart_toStartOf="@+id/edtSBP" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="mmol/L"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtSBP"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtDBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtDBP"
+                app:layout_constraintStart_toStartOf="@+id/edtDBP" />
+
+            <TextView
+                android:id="@+id/txtDBP"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtType"
+                app:layout_constraintEnd_toEndOf="@+id/txtSBP"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+
+            <TextView
+                android:id="@+id/txtType"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+                app:layout_constraintEnd_toEndOf="@+id/txtDBP"
+                app:layout_constraintHorizontal_bias="0.467"
+                app:layout_constraintStart_toStartOf="@+id/txtDBP" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+
+                android:text="开始分析"
+                android:background="#e2a617"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="343dp" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#f5f5f5"
+
+            android:gravity="center_vertical"
+            android:stretchColumns="0,1,2,3">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/backHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="首页" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="管理" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="设置" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

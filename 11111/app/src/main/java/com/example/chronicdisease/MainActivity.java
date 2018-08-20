@@ -25,10 +25,12 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
     private long mExitTime=0;
     private View view;
-    private ImageView imgBackHome;
-    private TextView txtTitle;
-    private ImageView imgreturn;
-    private LinearLayout baseElestical,yuhouElestical,healthManager,question,personInfo,settings;
+    //private ImageView imgBackHome;
+    //private TextView txtTitle;
+   // private ImageView imgreturn;
+    private TextView baseElestical;
+    private TextView yuhouElestical;
+    //private LinearLayout baseElestical,yuhouElestical,healthManager,question,personInfo,settings;
     //This is a test Tag for Git
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,29 +42,30 @@ public class MainActivity extends Activity {
         setupViewComponent();
     }
     private void setupViewComponent(){
-        imgBackHome=(ImageView) findViewById(R.id.backHome);
-        txtTitle=(TextView)findViewById(R.id.txtTitle);
-        imgreturn=(ImageView)findViewById(R.id.imgReturn);
-        baseElestical=(LinearLayout)findViewById(R.id.baseElestical);
-        yuhouElestical=(LinearLayout)findViewById(R.id.yuhouElestical);
-        healthManager=(LinearLayout)findViewById(R.id.healthManager);
-        question=(LinearLayout)findViewById(R.id.question);
-        personInfo=(LinearLayout)findViewById(R.id.personInfo);
-        settings=(LinearLayout)findViewById(R.id.settings);
+        //imgBackHome=(ImageView) findViewById(R.id.backHome);
+        //txtTitle=(TextView)findViewById(R.id.txtTitle);
+        //imgreturn=(ImageView)findViewById(R.id.imgReturn);
+        //baseElestical=(LinearLayout)findViewById(R.id.base);
+        //yuhouElestical=(LinearLayout)findViewById(R.id.yuhou);
+        baseElestical=(TextView) findViewById(R.id.baseElestical) ;
+        yuhouElestical=(TextView) findViewById(R.id.yuhouElestical);
+        //healthManager=(LinearLayout)findViewById(R.id.healthManager);
+       // question=(LinearLayout)findViewById(R.id.question);
+        //personInfo=(LinearLayout)findViewById(R.id.personInfo);
+        //settings=(LinearLayout)findViewById(R.id.settings);
 
 
-        imgBackHome.setVisibility(View.GONE);
-        txtTitle.setText("首页");
-        imgreturn.setBackgroundResource(R.drawable.down);     //改了图片记得改一下
-        imgreturn.setOnClickListener(new imgloginLis());
+        //imgBackHome.setVisibility(View.GONE);
+        //imgreturn.setBackgroundResource(R.drawable.down);     //改了图片记得改一下
+        //imgreturn.setOnClickListener(new imgloginLis());
 
 
         baseElestical.setOnClickListener( new BaseElesticalLis());
         yuhouElestical.setOnClickListener(new YuhouElesticalLis());
-        healthManager.setOnClickListener(new HealthManagerLis());
-        question.setOnClickListener(new QuestionLis());
-        personInfo.setOnClickListener(new PersonInfoLis());
-        settings.setOnClickListener(new SettingsLis());
+        //healthManager.setOnClickListener(new HealthManagerLis());
+        //question.setOnClickListener(new QuestionLis());
+        //personInfo.setOnClickListener(new PersonInfoLis());
+        //settings.setOnClickListener(new SettingsLis());
     }
     class imgloginLis implements View.OnClickListener{
 
@@ -96,7 +99,7 @@ public class MainActivity extends Activity {
         }
 
     }
-    class HealthManagerLis implements View.OnClickListener{
+    /*class HealthManagerLis implements View.OnClickListener{
 
         public void onClick(View arg0) {
             // TODO Auto-generated method stub
@@ -139,7 +142,7 @@ public class MainActivity extends Activity {
             overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
         }
 
-    }
+    }*/
 
     //实现按两次返回键退出程序
     @Override

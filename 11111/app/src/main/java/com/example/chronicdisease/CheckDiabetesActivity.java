@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,8 @@ public class CheckDiabetesActivity extends AppCompatActivity implements AdapterV
     private TextView num_of_diabetesTxv;
     private Context context;
     private ListView lv;
-    private Button go_ACC;
+    private TextView txtTitle;
+    private ImageView imgReturn,imgGonext;
     private int pressure_level;
     private int num_of_danger;
     private boolean TOD;
@@ -42,6 +44,12 @@ public class CheckDiabetesActivity extends AppCompatActivity implements AdapterV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_diabetes);
+        imgGonext=(ImageView) findViewById(R.id.imgGonext);
+        imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        imgGonext.setOnClickListener(new Gonext());
+        imgReturn.setOnClickListener(new imgReturnLis());
+        txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("糖尿病检测");
         final String[] mItems3 = {"空腹血糖≥7.0mmol/L","餐后血糖≥11.1mmol/L"};
         lv = (ListView) findViewById(R.id.diabetes_lv);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.check_diabetes_item,mItems3);
@@ -50,21 +58,10 @@ public class CheckDiabetesActivity extends AppCompatActivity implements AdapterV
         lv.setOnItemClickListener(this);
         num_of_diabetesTxv = findViewById(R.id.num_of_diabetesTxv);  //must below the setContentView
         num_of_diabetesTxv.setText(selected.size() + "");
-        go_ACC=findViewById(R.id.go_ACC);
         Intent get=getIntent();
         pressure_level=get.getIntExtra("pressure_level",0);
         num_of_danger=get.getIntExtra("num_of_danger",0);
         TOD=get.getBooleanExtra("TOD",false);
-        it.setClass(this, CheckACCActivity.class);
-        go_ACC.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0) {
-                it.putExtra("pressure_level", pressure_level);
-                it.putExtra("num_of_danger", num_of_danger);
-                it.putExtra("TOD", TOD);
-                it.putExtra("Diabetes", Diabetes);
-                startActivity(it);
-            }
-        });
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         num_of_diabetesTxv = findViewById(R.id.num_of_diabetesTxv);
@@ -84,5 +81,25 @@ public class CheckDiabetesActivity extends AppCompatActivity implements AdapterV
             Diabetes = false;
         }
     }
+    class Gonext implements View.OnClickListener{
 
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            it.setClass(CheckDiabetesActivity.this, CheckACCActivity.class);
+            it.putExtra("pressure_level", pressure_level);
+            it.putExtra("num_of_danger", num_of_danger);
+            it.putExtra("TOD", TOD);
+            it.putExtra("Diabetes", Diabetes);
+            startActivity(it);
+        }
+
+    }
+    class imgReturnLis  implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            finish();
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
+        }
+    }
 }

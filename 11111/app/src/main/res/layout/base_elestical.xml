@@ -5,47 +5,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
 
-    <Button
-        android:id="@+id/txtBloodPressure"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:text="血压分析"
-        app:layout_constraintBottom_toTopOf="@+id/txtBloodSugar"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2" />
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/txtBloodSugar"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:text="血糖分析"
-        app:layout_constraintBottom_toTopOf="@+id/txtBloodFat"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2" />
+        <Button
+            android:id="@+id/txtBloodPressure"
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="#e2a617"
+            android:text="血压分析"
+            app:layout_constraintBottom_toTopOf="@+id/txtBloodSugar"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view2" />
 
-    <Button
-        android:id="@+id/txtBloodFat"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:text="血脂分析"
-        app:layout_constraintBottom_toTopOf="@+id/txtWeight"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.263"
-        app:layout_constraintStart_toStartOf="@+id/view2" />
+        <Button
+            android:id="@+id/txtBloodSugar"
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="#0d637f"
+            android:text="血糖分析"
+            app:layout_constraintBottom_toTopOf="@+id/txtBloodFat"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view2" />
 
-    <Button
-        android:id="@+id/txtWeight"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="284dp"
-        android:text="体重分析"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/view2" />
+        <Button
+            android:id="@+id/txtBloodFat"
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:layout_marginStart="8dp"
+            android:background="#aa2266"
+            android:text="血脂分析"
+            app:layout_constraintBottom_toTopOf="@+id/txtWeight"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.263"
+            app:layout_constraintStart_toStartOf="@+id/view2" />
 
+        <Button
+            android:id="@+id/txtWeight"
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="284dp"
+            android:background="#45e15f"
+            android:text="体重分析"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintStart_toStartOf="@+id/view2" />
+    </LinearLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#f5f5f5"
+            android:stretchColumns="0,1,2,3"
+            android:gravity="center_vertical">
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="首页" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="管理" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="设置" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
@@ -56,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
-
+<!--
     <ImageView
         android:id="@+id/imgReturn"
         android:layout_width="60dp"
@@ -77,6 +131,9 @@
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:srcCompat="@android:color/background_dark" />
 
+
+-->
+
     <View
         android:id="@+id/view2"
         android:layout_width="397dp"
@@ -85,7 +142,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />

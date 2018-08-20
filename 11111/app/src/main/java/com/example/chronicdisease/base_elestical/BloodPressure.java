@@ -26,7 +26,7 @@ public class BloodPressure extends Activity {
     private EditText edtSBP, edtDBP;
     private TextView txtSBP,txtDBP,txtType,txtTitle;
     private String strtype;
-    private ImageView backHome;
+    private TextView backHome;
     private ImageView imgReturn;
     private Button btnSubmit;
 
@@ -36,10 +36,10 @@ public class BloodPressure extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         MyApp.getInstance().addActivity(this);
         setContentView(R.layout.activity_bloodpressure);
-        backHome=(ImageView)findViewById(R.id.backHome);
-        imgReturn=(ImageView)findViewById(R.id.imgReturn);
-        backHome.setImageResource(R.drawable.home);
-        imgReturn.setImageResource(R.drawable.gonext);
+        backHome=(TextView) findViewById(R.id.backHome);
+       imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        //backHome.setImageResource(R.drawable.home);
+       // imgReturn.setImageResource(R.drawable.gonext);
         edtSBP = (EditText) findViewById(R.id.edtSBP);
         edtDBP = (EditText) findViewById(R.id.edtDBP);
         txtSBP=(TextView)findViewById(R.id.txtSBP);
@@ -147,4 +147,5 @@ public class BloodPressure extends Activity {
 
         }
     }
+
 }

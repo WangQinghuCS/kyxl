@@ -16,10 +16,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class Whestimate extends Activity {
     private TextView txtTitle;
-    private ImageView backHome;
+    private TextView backHome;
     private ImageView imgReturn;
 
     private EditText edtWpt, edtHpt;
@@ -66,26 +68,26 @@ public class Whestimate extends Activity {
         setContentView(R.layout.whestimate);
 
         txtTitle=(TextView)findViewById(R.id.txtTitle);
-        backHome=(ImageView)findViewById(R.id.backHome);
+        backHome=(TextView) findViewById(R.id.backHome);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
-        backHome.setImageResource(R.drawable.pic_1);
-        imgReturn.setImageResource(R.drawable.pic_2);
+        //backHome.setImageResource(R.drawable.pic_1);
+        imgReturn.setImageResource(R.drawable.gonext);
         edtWpt = (EditText) findViewById(R.id.edtWpt);
         edtHpt = (EditText) findViewById(R.id.edtHpt);
-        txtHP = (TextView) findViewById(R.id.txtHP);
-        txtPrompt=(TextView)findViewById(R.id.txtPrompt);
+        //txtHP = (TextView) findViewById(R.id.txtHP);
+        //txtPrompt=(TextView)findViewById(R.id.txtPrompt);
         btnText=(Button)findViewById(R.id.btnTest);
-        btnText2=(Button)findViewById(R.id.btnTest2);
-        btnCancel=(Button)findViewById(R.id.btnCancel);
-        linearLayout=(LinearLayout)findViewById(R.id.linerLayout2);
+        //btnText2=(Button)findViewById(R.id.btnTest2);
+        //btnCancel=(Button)findViewById(R.id.btnCancel);
+        //linearLayout=(LinearLayout)findViewById(R.id.linerLayout);
 
         txtTitle.setText("身高指数");
         backHome.setOnClickListener(new backHomeLis());
         imgReturn.setOnClickListener(new imgReturnLis());
 
         btnText.setOnClickListener(new btnTextLis());
-        btnText2.setOnClickListener(new btnText2Lis());
-        btnCancel.setOnClickListener(new btnCancel());
+        //btnText2.setOnClickListener(new btnText2Lis());
+        //btnCancel.setOnClickListener(new btnCancel());
 
     }
     class backHomeLis implements View.OnClickListener{
@@ -112,19 +114,46 @@ public class Whestimate extends Activity {
 
         public void onClick(View v) {
             // TODO Auto-generated method stub
-
+            AlertDialog.Builder alterDialog = new AlertDialog.Builder(Whestimate.this);
+            alterDialog.setTitle("分析结果");
             String weight = edtWpt.getText().toString();
             String height = edtHpt.getText().toString();
             if(weight.length()==0||height.length()==0){
-                Toast.makeText(Whestimate.this, "请正确输入身高和体重",
-                        Toast.LENGTH_LONG).show();
+                alterDialog.setMessage("请正确输入身高和体重");
+                alterDialog.setCancelable(false);
+                alterDialog.setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(Whestimate.this, "好的", Toast.LENGTH_SHORT).show();
+                        Intent it=new Intent();
+                        it.setClass(Whestimate.this,Whestimate.class);
+                        Bundle bundle =new Bundle();
+                        bundle.putFloat("point", point);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                    }
+                });
+                alterDialog.show();
             }
             else{
                 weit = Float.parseFloat(weight);
                 heit = Float.parseFloat(height);
                 if (weit <30 || heit <60||weit>300||heit>300) {
-                    Toast.makeText(Whestimate.this, "抱歉，您输入的数据不在常规范围内,请检查数据是否有误",
-                            Toast.LENGTH_LONG).show();
+                    alterDialog.setMessage("抱歉，您输入的数据不在常规范围内,请检查数据是否有误");
+                    alterDialog.setCancelable(false);
+                    alterDialog.setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(Whestimate.this, "好的", Toast.LENGTH_SHORT).show();
+                            Intent it=new Intent();
+                            it.setClass(Whestimate.this,Whestimate.class);
+                            Bundle bundle =new Bundle();
+                            bundle.putFloat("point", point);
+                            it.putExtras(bundle);
+                            startActivity(it);
+                        }
+                    });
+                    alterDialog.show();
                 }
                 else {
 
@@ -133,17 +162,62 @@ public class Whestimate extends Activity {
                     point = (float) ((int) (point * 10)) / 10;
 
                     bmiJugde(point);
-                    txtHP.setText("体重指数为" + "  " + point + "\n"
-                            + "体重指数类别为:" + bmiResult+"\n"+"\n");
-                    txtPrompt.setVisibility(View.VISIBLE);
-                    linearLayout.setVisibility(View.VISIBLE);
+                    alterDialog.setMessage("体重指数为" + point + "," +
+                                                        "体重指数类别为" + bmiResult+"。"+"\n你想知道肥胖与高血压等疾病的关系吗");
+                    alterDialog.setCancelable(false);
+                    alterDialog.setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(Whestimate.this, "好的", Toast.LENGTH_SHORT).show();
+                            Intent it=new Intent();
+                            it.setClass(Whestimate.this,DangerBmi.class);
+                            Bundle bundle =new Bundle();
+                            bundle.putFloat("point", point);
+                            it.putExtras(bundle);
+                            startActivity(it);
+                        }
+                    });
+                    alterDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(Whestimate.this, "取消", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
+                    alterDialog.show();
+                    //txtPrompt.setVisibility(View.VISIBLE);
+                    //linearLayout.setVisibility(View.VISIBLE);
 
                 }}
+
+          /*  alterDialog.setCancelable(false);
+            alterDialog.setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(Whestimate.this, "好的", Toast.LENGTH_SHORT).show();
+                    Intent it=new Intent();
+                    it.setClass(Whestimate.this,DangerBmi.class);
+                    Bundle bundle =new Bundle();
+                    bundle.putFloat("point", point);
+                    it.putExtras(bundle);
+                    startActivity(it);
+                }
+            });
+            alterDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(Whestimate.this, "取消", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            });
+            alterDialog.show();
+
+*/
 
         }
 
     }
-    class btnText2Lis implements OnClickListener{
+    /*class btnText2Lis implements OnClickListener{
 
         public void onClick(View v) {
             // TODO Auto-generated method stub
@@ -166,6 +240,7 @@ public class Whestimate extends Activity {
         }
 
     }
+    */
 
     public String bmiJugde(float point) {
         if (point < 18.5f) {

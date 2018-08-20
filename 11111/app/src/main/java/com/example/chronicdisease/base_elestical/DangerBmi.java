@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 public class DangerBmi extends Activity {
     private TextView txtTitle;
-    private ImageView backHome;
-    private ImageView imgReturn;
+    private TextView backHome;
+    //private Button imgReturn;
 
     private RadioGroup radGSex;
     private RadioButton radMale,radFemale;
@@ -81,10 +81,10 @@ public class DangerBmi extends Activity {
     private void setupViewComponent(){
 
         txtTitle=(TextView)findViewById(R.id.txtTitle);
-        backHome=(ImageView)findViewById(R.id.backHome);
-        imgReturn=(ImageView)findViewById(R.id.imgReturn);
-        backHome.setImageResource(R.drawable.pic_1);
-        imgReturn.setImageResource(R.drawable.pic_2);
+        backHome=(TextView) findViewById(R.id.backHome);
+       //imgReturn=(ImageView)findViewById(R.id.imgReturn);
+       // backHome.setImageResource(R.drawable.pic_1);
+       // imgReturn.setImageResource(R.drawable.pic_2);
         radGSex=(RadioGroup)findViewById(R.id.radGSex);
         radMale=(RadioButton)findViewById(R.id.radMale);
         radFemale=(RadioButton)findViewById(R.id.radFemale);
@@ -95,7 +95,7 @@ public class DangerBmi extends Activity {
 
         txtTitle.setText("危险评估");
         backHome.setOnClickListener(new backHomeLis());
-        imgReturn.setOnClickListener(new imgReturnLis());
+       // imgReturn.setOnClickListener(new imgReturnLis());
 
         radGSex.setOnCheckedChangeListener( new radGSexChangeLis());
         btnWaistline.setOnClickListener(new btnWaistlineLis());

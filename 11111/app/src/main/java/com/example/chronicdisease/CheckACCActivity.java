@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,8 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
     private TextView num_of_ACCTxv;
     private Context context;
     private ListView lv;
-    private Button go_result;
+    private TextView txtTitle;
+    private ImageView imgReturn,imgGonext;
     private int pressure_level;
     private int num_of_danger;
     private boolean TOD;
@@ -42,6 +44,12 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_acc);
+        imgGonext=(ImageView) findViewById(R.id.imgGonext);
+        imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        imgGonext.setOnClickListener(new Gonext());
+        imgReturn.setOnClickListener(new imgReturnLis());
+        txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("ACC");
         final String[] mItems4 = {"脑血管疾病","心脏疾病","肾脏疾病","外周血管疾病",
                 "视网膜病变"};
         lv = (ListView) findViewById(R.id.ACC_lv);
@@ -51,23 +59,11 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
         lv.setOnItemClickListener(this);
         num_of_ACCTxv = findViewById(R.id.num_of_ACCTxv);  //must below the setContentView
         num_of_ACCTxv.setText(selected.size() + "");
-        go_result=findViewById(R.id.go_result);
         Intent get=getIntent();
         pressure_level=get.getIntExtra("pressure_level",0);
         num_of_danger=get.getIntExtra("num_of_danger",0);
         TOD=get.getBooleanExtra("TOD",false);
         Diabetes = get.getBooleanExtra("Diabetes",false);
-        it.setClass(this, ShowResultActivity.class);
-        go_result.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0) {
-                it.putExtra("pressure_level", pressure_level);
-                it.putExtra("num_of_danger", num_of_danger);
-                it.putExtra("TOD", TOD);
-                it.putExtra("Diabetes", Diabetes);
-                it.putExtra("ACC", ACC);
-                startActivity(it);
-            }
-        });
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         num_of_ACCTxv = findViewById(R.id.num_of_ACCTxv);
@@ -87,6 +83,28 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
             ACC=false;
         }
 
+    }
+    class Gonext implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            it.setClass(CheckACCActivity.this, ShowResultActivity.class);
+            it.putExtra("pressure_level", pressure_level);
+            it.putExtra("num_of_danger", num_of_danger);
+            it.putExtra("TOD", TOD);
+            it.putExtra("Diabetes", Diabetes);
+            it.putExtra("ACC", ACC);
+            startActivity(it);
+        }
+
+    }
+    class imgReturnLis  implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            finish();
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
+        }
     }
 
 }
