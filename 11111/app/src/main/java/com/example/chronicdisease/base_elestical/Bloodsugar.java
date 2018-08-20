@@ -94,7 +94,7 @@ public class Bloodsugar extends Activity {
                             {
                                 ATH=Float.parseFloat(edtATH.getText().toString());
                                 if (ATH<0f||ATH>20f)
-                                    Toast.makeText(Bloodsugar.this, "输入的数值过于离谱！", Toast.LENGTH_LONG).show();
+                                    result.setText("您输入的数值过于离谱！");
                                 else if (ATH<7.8f)
                                     result.setText("正常范围！");
                                 else if (ATH<11.1f)
@@ -132,8 +132,8 @@ public class Bloodsugar extends Activity {
                     BMP=Float.parseFloat(edtBMP.getText().toString());
                     ATH=Float.parseFloat(edtATH.getText().toString());
                     if (ATH<0f||ATH>20f||BMP<0f||BMP>20f)
-                        Toast.makeText(Bloodsugar.this, "输入的数值过于离谱！", Toast.LENGTH_LONG).show();
-                    if (BMP>=7.0f||ATH>=11.1f)
+                        result.setText("您输入的数值过于离谱！");
+                    else if (BMP>=7.0f||ATH>=11.1f)
                         result.setText("您患有糖尿病！");
                     else if  ((BMP>=6.1f&&BMP<=7.0f)&&(ATH>=7.8f&&ATH<=11.1f))
                         result.setText("空腹血糖受损与糖耐量降低并存！");
