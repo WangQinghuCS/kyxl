@@ -28,7 +28,7 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
     private TextView num_of_ACCTxv;
     private Context context;
     private ListView lv;
-    private TextView txtTitle;
+    private TextView txtTitle,backHome;
     private ImageView imgReturn,imgGonext;
     private int pressure_level;
     private int num_of_danger;
@@ -50,6 +50,8 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("ACC");
+        backHome = findViewById(R.id.backHome);
+        backHome.setOnClickListener(new backHomeLis());
         final String[] mItems4 = {"脑血管疾病","心脏疾病","肾脏疾病","外周血管疾病",
                 "视网膜病变"};
         lv = (ListView) findViewById(R.id.ACC_lv);
@@ -105,6 +107,16 @@ public class CheckACCActivity extends AppCompatActivity implements AdapterView.O
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckACCActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
     }
 
 }

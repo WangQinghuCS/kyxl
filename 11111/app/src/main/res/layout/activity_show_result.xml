@@ -9,6 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@drawable/listview_divider"
+        android:showDividers="middle"
         android:orientation="vertical">
 
         <LinearLayout
@@ -43,47 +45,90 @@
                 android:src="@drawable/gonext" />
 
         </LinearLayout>
-
+        <TextView
+            android:id="@+id/Empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="55dp" />
         <TextView
             android:id="@+id/pressure_level_resultTxv"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/num_of_danger_resultTxv"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tod_resultTxv"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/diabetes_resultTxv"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/ACC_resultTxv"
             android:layout_width="match_parent"
-            android:layout_height="66dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/danger_levelTxv"
             android:layout_width="match_parent"
-            android:layout_height="208dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="TextView"
             android:textSize="24sp" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#f5f5f5"
+
+            android:gravity="center_vertical"
+            android:stretchColumns="0,1,2,3">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/backHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="首页" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="管理" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="我" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="设置" />
+            </TableRow>
+
+        </TableLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
