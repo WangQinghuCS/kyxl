@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
 
+        android:background="@drawable/background"
         android:orientation="vertical">
 
         <LinearLayout
@@ -112,53 +113,54 @@
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/txtSBP"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/txtDBP"
-            app:layout_constraintEnd_toEndOf="@+id/edtDBP"
-            app:layout_constraintStart_toStartOf="@+id/edtDBP" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtDBP"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/txtType"
-            app:layout_constraintEnd_toEndOf="@+id/txtSBP"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+            <TextView
+                android:id="@+id/txtSBP"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtDBP"
+                app:layout_constraintEnd_toEndOf="@+id/edtDBP"
+                app:layout_constraintStart_toStartOf="@+id/edtDBP" />
 
-        <TextView
-            android:id="@+id/txtType"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="40dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
-            app:layout_constraintEnd_toEndOf="@+id/txtDBP"
-            app:layout_constraintHorizontal_bias="0.467"
-            app:layout_constraintStart_toStartOf="@+id/txtDBP" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtDBP"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtType"
+                app:layout_constraintEnd_toEndOf="@+id/txtSBP"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="@+id/txtSBP" />
+
+            <TextView
+                android:id="@+id/txtType"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+                app:layout_constraintEnd_toEndOf="@+id/txtDBP"
+                app:layout_constraintHorizontal_bias="0.467"
+                app:layout_constraintStart_toStartOf="@+id/txtDBP" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
 
-                android:text="开始分析"
                 android:background="#e2a617"
+                android:text="开始分析"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="343dp" />

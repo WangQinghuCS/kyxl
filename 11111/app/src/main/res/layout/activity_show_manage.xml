@@ -11,6 +11,7 @@
         android:layout_weight="1"
         android:divider="@drawable/listview_divider"
         android:showDividers="middle"
+        android:background="@drawable/background"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"

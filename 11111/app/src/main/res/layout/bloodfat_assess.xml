@@ -24,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="47dp"
             android:layout_weight="1"
-            android:src="@drawable/gonext" />
+            android:src="@drawable/home" />
 
         <TextView
             android:id="@+id/txtTitle"

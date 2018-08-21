@@ -37,7 +37,7 @@ public class Bloodsugar extends Activity {
         imaBack_home=(TextView) findViewById(R.id.backHome);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn =(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.gonext);
+        imaReturn.setImageResource(R.drawable.home);
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtTitle.setText("血糖检测");
         btnSubmit56.setOnClickListener(btnSubmitOnClick);
