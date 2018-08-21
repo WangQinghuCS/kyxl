@@ -32,14 +32,20 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal"
-            android:text="TextView"
             android:textColor="#e2a617"
+            android:text="TextView"
+
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:gravity="center_vertical|center_horizontal"
+            android:text="管理"
+
+            android:layout_weight="1"
+            android:textSize="24sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
