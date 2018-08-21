@@ -7,13 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.util.Log;
 
 public class CheckManageActivity extends AppCompatActivity {
     private int result;
     private int level;
-
+    private TextView txtTitle,txtComplete,backHome;
+    private ImageView imgReturn;
     private TextView textView10,textView11,textView12,textView13,textView14,textView15,
             textView16,textView17,textView18,textView19,textView1A,textView1B,textView1C,textView1D;
 
@@ -22,6 +24,15 @@ public class CheckManageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent get = getIntent();
         setContentView(R.layout.activity_show_manage);
+        txtTitle = findViewById(R.id.txtTitle);
+        txtComplete = findViewById(R.id.txtComplete);
+        imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        txtComplete.setOnClickListener(new backHomeLis());
+        imgReturn.setOnClickListener(new imgReturnLis());
+        txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("管理");
+        backHome = findViewById(R.id.backHome);
+        backHome.setOnClickListener(new backHomeLis());
         textView10 = findViewById(R.id.textView10);
         textView11 = findViewById(R.id.textView11);
         textView12 = findViewById(R.id.textView12);
@@ -105,6 +116,25 @@ public class CheckManageActivity extends AppCompatActivity {
 
         {
             textView10.setText("app error");
+        }
+
+    }
+    class imgReturnLis  implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            finish();
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
+
+        }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckManageActivity.this, MainActivity.class);
+            startActivity(it);
         }
 
     }

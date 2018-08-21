@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">chronicdisease</string>
+    <string name="app_name">慢性病评估</string>
     <string name="promptSBP">收缩压:</string>
     <string name="promptDBP">舒张压:</string>
     <string name="promptType">血压水平的分类:</string>

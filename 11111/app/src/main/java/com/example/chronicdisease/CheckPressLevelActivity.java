@@ -27,7 +27,7 @@ public class CheckPressLevelActivity extends AppCompatActivity implements Adapte
     private Context context;
     private int num_of_danger;
     private int pressure_level;
-    private TextView txtTitle;
+    private TextView txtTitle,backHome;
     private ImageView imgReturn,imgGonext;
     private Intent it = new Intent();
 
@@ -41,6 +41,8 @@ public class CheckPressLevelActivity extends AppCompatActivity implements Adapte
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("血压等级");
+        backHome = findViewById(R.id.backHome);
+        backHome.setOnClickListener(new backHomeLis());
         final String[] mItems5 = {"一级","二级","三级"};
         ListView lv = (ListView) findViewById(R.id.pressure_lv);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.pressure_level_item,mItems5);
@@ -76,5 +78,15 @@ public class CheckPressLevelActivity extends AppCompatActivity implements Adapte
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
 
         }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckPressLevelActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
     }
 }

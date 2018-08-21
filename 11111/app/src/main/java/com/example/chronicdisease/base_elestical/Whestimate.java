@@ -71,7 +71,7 @@ public class Whestimate extends Activity {
         backHome=(TextView) findViewById(R.id.backHome);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
         //backHome.setImageResource(R.drawable.pic_1);
-        imgReturn.setImageResource(R.drawable.gonext);
+        imgReturn.setImageResource(R.drawable.home);
         edtWpt = (EditText) findViewById(R.id.edtWpt);
         edtHpt = (EditText) findViewById(R.id.edtHpt);
         //txtHP = (TextView) findViewById(R.id.txtHP);

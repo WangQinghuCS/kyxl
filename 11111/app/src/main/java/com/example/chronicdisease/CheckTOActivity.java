@@ -28,7 +28,7 @@ public class CheckTOActivity extends AppCompatActivity implements AdapterView.On
     private TextView num_of_TODTxv;
     private Context context;
     private ListView lv;
-    private TextView txtTitle;
+    private TextView txtTitle,backHome;
     private ImageView imgReturn,imgGonext;
     private boolean TOD;
     private Intent it = new Intent();
@@ -49,6 +49,8 @@ public class CheckTOActivity extends AppCompatActivity implements AdapterView.On
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("TOD");
+        backHome = findViewById(R.id.backHome);
+        backHome.setOnClickListener(new backHomeLis());
         final String[] mItems2 = {"左心室肥厚","动脉壁增厚","血清肌酐轻度升高","微量白蛋白尿",
                 "早发心血管疾病家族史","腹型肥胖或肥胖",};
         lv = (ListView) findViewById(R.id.TOD_lv);
@@ -100,5 +102,15 @@ public class CheckTOActivity extends AppCompatActivity implements AdapterView.On
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckTOActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
     }
 }

@@ -77,7 +77,7 @@ public class bloodfat_assess extends Activity
         imaBack_home=(TextView) findViewById(R.id.backHome);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.gonext);
+        imaReturn.setImageResource(R.drawable.home);
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtTitle.setText("检测结果");
         imaBack_home.setOnClickListener(new backHomeLis());

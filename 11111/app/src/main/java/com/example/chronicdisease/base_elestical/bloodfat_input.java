@@ -41,7 +41,7 @@ public class bloodfat_input extends Activity
         imaBack_home=(TextView) findViewById(R.id.backHome);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
-        imaReturn.setImageResource(R.drawable.gonext);
+        imaReturn.setImageResource(R.drawable.home);
         txtTitle.setText("输入指标");
         imaBack_home.setOnClickListener(new backHomeLis());
         imaReturn.setOnClickListener(new imgReturnLis());

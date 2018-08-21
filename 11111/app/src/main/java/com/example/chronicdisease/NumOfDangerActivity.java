@@ -26,7 +26,7 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
     //ArrayList<Integer> selected_position = new ArrayList<>();
     private TextView num_of_factor_txv;
     private Context context;
-    private TextView txtTitle;
+    private TextView txtTitle,backHome;
     private ImageView imgReturn,imgGonext;
     private int num_of_danger;
     private int pressure_level;
@@ -46,6 +46,8 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("危险因素");
+        backHome = findViewById(R.id.backHome);
+        backHome.setOnClickListener(new backHomeLis());
         final String[] mItems1 = {"男性>55岁","女性＞65岁","吸烟","血脂异常",
                 "早发心血管疾病家族史","腹型肥胖或肥胖",
                 "缺乏体力活动","高敏C反应蛋白≥3mg/L或C反应蛋白≥10mg/L"};
@@ -95,5 +97,15 @@ public class NumOfDangerActivity extends AppCompatActivity implements AdapterVie
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(NumOfDangerActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
     }
 }
