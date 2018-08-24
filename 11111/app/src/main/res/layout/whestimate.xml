@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f5f5"
+            android:background="#e4f2eb"
             android:orientation="horizontal">
 
 
@@ -42,7 +42,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -185,11 +190,11 @@
                 app:layout_constraintStart_toStartOf="@+id/view7" />
         </LinearLayout>
 -->
+    </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#f5f5f5"
-
+            android:background="#e4f2eb"
             android:gravity="center_vertical"
             android:stretchColumns="0,1,2,3">
 

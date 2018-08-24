@@ -10,14 +10,12 @@ android:layout_height="match_parent">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-
-    android:background="@drawable/background"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f5f5f5"
+        android:background="#e4f2eb"
         android:orientation="horizontal">
 
 
@@ -34,16 +32,28 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal"
-            android:text="TextView"
             android:textColor="#e2a617"
+            android:text="TextView"
+
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-    </LinearLayout>
+            android:gravity="center_vertical|center_horizontal"
+            android:text="管理"
 
+            android:layout_weight="1"
+            android:textSize="24sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+
+        android:background="@drawable/background"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -170,12 +180,11 @@ android:layout_height="match_parent">
             tools:layout_editor_absoluteY="343dp" />
 
     </LinearLayout>
-
+    </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#f5f5f5"
-
+        android:background="#e4f2eb"
         android:gravity="center_vertical"
         android:stretchColumns="0,1,2,3">
 

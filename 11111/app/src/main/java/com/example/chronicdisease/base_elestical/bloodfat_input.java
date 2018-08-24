@@ -32,7 +32,7 @@ public class bloodfat_input extends Activity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         MyApp.getInstance().addActivity(this);
         setContentView(R.layout.bloodfat_input);
-        btnSubmit=(Button)findViewById(R.id.button1);
+        btnSubmit=(Button)findViewById(R.id.btnSubmit);
         edtTC=(EditText)findViewById(R.id.editText1);
         edtLDL_C=(EditText)findViewById(R.id.editText2);
         edtHDL_C=(EditText)findViewById(R.id.editText3);

@@ -10,14 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-
-        android:background="@drawable/background"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f5f5"
+            android:background="#e4f2eb"
             android:orientation="horizontal">
 
 
@@ -43,14 +41,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
 
+        android:background="@drawable/background"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
-
-
 
             <EditText
 
@@ -78,10 +80,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-
-
             <EditText
-
                 android:id="@+id/editText2"
                 android:layout_width="224dp"
                 android:layout_height="50dp"
@@ -194,27 +193,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btnSubmit"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
 
-                android:text="开始分析"
                 android:background="#e2a617"
+                android:text="开始分析"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="343dp" />
 
         </LinearLayout>
-
+    </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#f5f5f5"
-
+            android:background="#e4f2eb"
             android:gravity="center_vertical"
             android:stretchColumns="0,1,2,3">
 
