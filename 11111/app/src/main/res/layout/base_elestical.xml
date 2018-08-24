@@ -10,13 +10,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
 
-        android:background="@drawable/background"
         android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
+        android:background="@drawable/background"
         android:orientation="vertical">
 
         <Button
@@ -70,7 +70,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#f5f5f5"
+            android:background="#e4f2eb"
             android:stretchColumns="0,1,2,3"
             android:gravity="center_vertical">
 
