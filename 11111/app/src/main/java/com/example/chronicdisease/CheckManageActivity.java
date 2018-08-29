@@ -1,5 +1,6 @@
 package com.example.chronicdisease;
 
+import android.app.Activity;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.util.Log;
 
-public class CheckManageActivity extends AppCompatActivity {
+public class CheckManageActivity extends Activity {
     private int result;
     private int level;
     private TextView txtTitle,txtComplete,backHome;

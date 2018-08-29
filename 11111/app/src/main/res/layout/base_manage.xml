@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowResultActivity">
+    tools:context=".NumOfDangerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,70 +35,64 @@
                 android:textColor="#e2a617"
                 android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/imgGonext"
+            <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="47dp"
                 android:layout_weight="1"
-                android:src="@drawable/gonext" />
+                 />
 
         </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@drawable/empty_block"
+        android:showDividers="middle"
         android:layout_weight="1"
         android:background="@drawable/background"
-        android:divider="@drawable/empty_block"
-        android:orientation="vertical"
-        android:showDividers="middle">
-        <TextView
-            android:id="@+id/Empty"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:textSize="55dp" />
-        <TextView
-            android:id="@+id/pressure_level_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/num_of_danger_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/tod_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/diabetes_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/ACC_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/danger_levelTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="24sp" />
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="对象：血糖比较稳定；无并发症或并发症稳定的患者；不愿参加强化管理的患者"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="随访每年至少4次。"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="随访内容:"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="血糖检测（包括患者自检）：至少每2周检测1次空腹血糖和（或）1次餐后2小时血糖。"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="糖化血红蛋白检测：每3个月1次，至少1年1次。"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="血压检测：伴高血压的患者至少每周1次。不伴高血压的患者，每年至少1次。"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="血脂检测、视网膜检查、尿微量白蛋白检测、心电图检查、神经病变检查、足部检查:每年至少1次。"
+                android:textSize="15sp"/>
+        </LinearLayout>
     </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
@@ -136,5 +130,7 @@
             </TableRow>
 
         </TableLayout>
+
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

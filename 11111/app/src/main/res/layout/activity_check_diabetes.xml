@@ -10,15 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@drawable/background"
-        android:divider="@drawable/empty_block"
-        android:showDividers="middle"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f5f5"
+            android:background="#e4f2eb"
             android:orientation="horizontal">
 
 
@@ -47,6 +44,14 @@
                 android:src="@drawable/gonext" />
 
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:divider="@drawable/empty_block"
+        android:orientation="vertical"
+        android:showDividers="middle">
         <TextView
             android:id="@+id/Empty"
             android:layout_width="match_parent"
@@ -87,12 +92,11 @@
             tools:layout_editor_absoluteY="50dp">
 
         </ListView>
-
+    </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#f5f5f5"
-
+            android:background="#e4f2eb"
             android:gravity="center_vertical"
             android:stretchColumns="0,1,2,3">
 

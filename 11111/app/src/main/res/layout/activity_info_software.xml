@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowResultActivity">
+    tools:context=".NumOfDangerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,71 +35,30 @@
                 android:textColor="#e2a617"
                 android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/imgGonext"
+            <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="47dp"
                 android:layout_weight="1"
-                android:src="@drawable/gonext" />
+                />
 
         </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@drawable/background"
-        android:divider="@drawable/empty_block"
-        android:orientation="vertical"
-        android:showDividers="middle">
-        <TextView
-            android:id="@+id/Empty"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:textSize="55dp" />
-        <TextView
-            android:id="@+id/pressure_level_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/num_of_danger_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/tod_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/diabetes_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/ACC_resultTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/danger_levelTxv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:divider="@drawable/empty_block"
+            android:showDividers="middle"
             android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="24sp" />
-    </LinearLayout>
+            android:background="@drawable/background"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/info_softwareTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:layout_marginTop="100dp"/>
+
+        </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -136,5 +95,7 @@
             </TableRow>
 
         </TableLayout>
+
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

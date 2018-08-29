@@ -23,6 +23,9 @@
         <activity android:name=".base_elestical.bloodfat_input" />
         <activity android:name=".base_elestical.bloodfat_assess" />
         <activity android:name=".base_elestical.Whestimate" />
+        <activity android:name=".base_elestical.sugarManage" />
+        <activity android:name=".base_elestical.baseManage" />
+        <activity android:name=".base_elestical.exManage" />
         <activity android:name=".base_elestical.DangerBmi" />
         <activity android:name=".NumOfDangerActivity" />
         <activity android:name=".CheckTOActivity" />
@@ -30,7 +33,10 @@
         <activity android:name=".CheckACCActivity" />
         <activity android:name=".CheckManageActivity" />
         <activity android:name=".ShowResultActivity" />
-        <activity android:name=".CheckPressLevelActivity"></activity>
+        <activity android:name=".CheckPressLevelActivity" />
+        <activity android:name=".Info_us" />
+        <activity android:name=".Info_software" />
+        <activity android:name=".Feedback"></activity>
     </application>
 
 </manifest>

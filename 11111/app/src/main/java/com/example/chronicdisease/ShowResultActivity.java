@@ -1,5 +1,6 @@
 package com.example.chronicdisease;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ShowResultActivity extends AppCompatActivity {
+public class ShowResultActivity extends Activity {
     private int pressure_level;
     private int num_of_danger;
     private boolean TOD;
