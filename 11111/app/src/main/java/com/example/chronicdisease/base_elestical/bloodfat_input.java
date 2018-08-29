@@ -1,5 +1,6 @@
 package com.example.chronicdisease.base_elestical;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.R;
@@ -24,7 +25,7 @@ public class bloodfat_input extends Activity
     private Button btnSubmit;
     private ImageView imaReturn;
     private EditText edtTC,edtLDL_C,edtHDL_C,edtTG;
-    private TextView txtTitle,imaBack_home,txtTC,txtLDL_C,txtHDL_C,txtTG;
+    private TextView txtTitle,imaBack_home,txtTC,txtLDL_C,txtHDL_C,txtTG,base1,yuhou1;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -41,9 +42,13 @@ public class bloodfat_input extends Activity
         imaBack_home=(TextView) findViewById(R.id.backHome);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imaReturn.setImageResource(R.drawable.home);
         txtTitle.setText("输入指标");
         imaBack_home.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         imaReturn.setOnClickListener(new imgReturnLis());
         btnSubmit.setOnClickListener(btnSubmitOnClick);
 
@@ -80,6 +85,26 @@ public class bloodfat_input extends Activity
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
 
         }
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(bloodfat_input.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(bloodfat_input.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
     private Button.OnClickListener btnSubmitOnClick=new Button.OnClickListener() {
 

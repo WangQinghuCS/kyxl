@@ -1,5 +1,6 @@
 package com.example.chronicdisease.base_elestical;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.NumOfDangerActivity;
@@ -26,7 +27,7 @@ public class BloodPressure extends Activity {
     private EditText edtSBP, edtDBP;
     private TextView txtSBP,txtDBP,txtType,txtTitle;
     private String strtype;
-    private TextView backHome;
+    private TextView backHome,base1,yuhou1;
     private ImageView imgReturn;
     private Button btnSubmit;
 
@@ -37,6 +38,8 @@ public class BloodPressure extends Activity {
         MyApp.getInstance().addActivity(this);
         setContentView(R.layout.activity_bloodpressure);
         backHome=(TextView) findViewById(R.id.backHome);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
        imgReturn=(ImageView)findViewById(R.id.imgReturn);
         //backHome.setImageResource(R.drawable.home);
        // imgReturn.setImageResource(R.drawable.gonext);
@@ -48,6 +51,8 @@ public class BloodPressure extends Activity {
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtTitle.setText("血压评估");
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         imgReturn.setOnClickListener(new imgReturnLis());
         btnSubmit = (Button)findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +139,26 @@ public class BloodPressure extends Activity {
             // TODO Auto-generated method stub
             Intent it=new Intent();
             it.setClass(BloodPressure.this, MainActivity.class);
+            startActivity(it);
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(BloodPressure.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(BloodPressure.this, CheckPressLevelActivity.class);
             startActivity(it);
         }
 

@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
    // private ImageView imgreturn;
     private TextView baseElestical;
     private TextView yuhouElestical;
-    private TextView info_us;
+    private TextView info_us,base1,yuhou1;
     private TextView info_software;
     private TextView feedback;
     //private LinearLayout baseElestical,yuhouElestical,healthManager,question,personInfo,settings;
@@ -53,6 +53,8 @@ public class MainActivity extends Activity {
         baseElestical=(TextView) findViewById(R.id.baseElestical) ;
         yuhouElestical=(TextView) findViewById(R.id.yuhouElestical);
         info_us = findViewById(R.id.info_us);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         info_software = findViewById(R.id.info_software);
         feedback = findViewById(R.id.feedback);
         //healthManager=(LinearLayout)findViewById(R.id.healthManager);
@@ -71,6 +73,8 @@ public class MainActivity extends Activity {
         info_software.setOnClickListener(new info_softwareLis());
         info_us.setOnClickListener(new info_usLis());
         feedback.setOnClickListener(new feedbackLis());
+        base1.setOnClickListener(new BaseElesticalLis());
+        yuhou1.setOnClickListener(new YuhouElesticalLis());
         //healthManager.setOnClickListener(new HealthManagerLis());
         //question.setOnClickListener(new QuestionLis());
         //personInfo.setOnClickListener(new PersonInfoLis());

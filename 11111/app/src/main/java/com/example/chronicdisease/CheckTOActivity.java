@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
 import com.example.chronicdisease.base_elestical.BloodPressure;
 
 import org.w3c.dom.Text;
@@ -29,7 +30,7 @@ public class CheckTOActivity extends Activity implements AdapterView.OnItemClick
     private TextView num_of_TODTxv;
     private Context context;
     private ListView lv;
-    private TextView txtTitle,backHome;
+    private TextView txtTitle,backHome,base1,yuhou1;
     private ImageView imgReturn,imgGonext;
     private boolean TOD;
     private Intent it = new Intent();
@@ -46,12 +47,16 @@ public class CheckTOActivity extends Activity implements AdapterView.OnItemClick
         setContentView(R.layout.activity_check_to);
         imgGonext=(ImageView) findViewById(R.id.imgGonext);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgGonext.setOnClickListener(new Gonext());
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("TOD");
         backHome = findViewById(R.id.backHome);
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         final String[] mItems2 = {"左心室肥厚","动脉壁增厚","血清肌酐轻度升高","微量白蛋白尿",
                 "早发心血管疾病家族史","腹型肥胖或肥胖",};
         lv = (ListView) findViewById(R.id.TOD_lv);
@@ -110,6 +115,26 @@ public class CheckTOActivity extends Activity implements AdapterView.OnItemClick
             // TODO Auto-generated method stub
             Intent it=new Intent();
             it.setClass(CheckTOActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckTOActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckTOActivity.this, CheckPressLevelActivity.class);
             startActivity(it);
         }
 

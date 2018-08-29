@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
 import com.example.chronicdisease.base_elestical.BloodPressure;
 
 import org.w3c.dom.Text;
@@ -29,7 +30,7 @@ public class CheckDiabetesActivity extends Activity implements AdapterView.OnIte
     private TextView num_of_diabetesTxv;
     private Context context;
     private ListView lv;
-    private TextView txtTitle,backHome;
+    private TextView txtTitle,backHome,base1,yuhou1;
     private ImageView imgReturn,imgGonext;
     private int pressure_level;
     private int num_of_danger;
@@ -47,12 +48,16 @@ public class CheckDiabetesActivity extends Activity implements AdapterView.OnIte
         setContentView(R.layout.activity_check_diabetes);
         imgGonext=(ImageView) findViewById(R.id.imgGonext);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgGonext.setOnClickListener(new Gonext());
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("糖尿病检测");
         backHome = findViewById(R.id.backHome);
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         final String[] mItems3 = {"空腹血糖≥7.0mmol/L","餐后血糖≥11.1mmol/L"};
         lv = (ListView) findViewById(R.id.diabetes_lv);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.check_diabetes_item,mItems3);
@@ -104,6 +109,26 @@ public class CheckDiabetesActivity extends Activity implements AdapterView.OnIte
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckDiabetesActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckDiabetesActivity.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
     class backHomeLis implements View.OnClickListener{
 

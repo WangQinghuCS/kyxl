@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
+
 public class ShowResultActivity extends Activity {
     private int pressure_level;
     private int num_of_danger;
@@ -21,7 +23,7 @@ public class ShowResultActivity extends Activity {
             tod_resultTxv,diabetes_resultTxv,ACC_resultTxv,danger_levelTxv;
     private final String DangerLevel[] = {"低危", "中危", "高危", "很高危"};
     private int result_index;
-    private TextView txtTitle;
+    private TextView txtTitle,base1,yuhou1,backHome;
     private ImageView imgReturn,imgGonext;
     private Intent it =  new Intent();
     @Override
@@ -30,8 +32,14 @@ public class ShowResultActivity extends Activity {
         setContentView(R.layout.activity_show_result);
         imgGonext=(ImageView) findViewById(R.id.imgGonext);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        backHome=(TextView) findViewById(R.id.backHome);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgGonext.setOnClickListener(new Gonext());
         imgReturn.setOnClickListener(new imgReturnLis());
+        backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("结果");
         Intent get=getIntent();
@@ -106,6 +114,36 @@ public class ShowResultActivity extends Activity {
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class backHomeLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(ShowResultActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(ShowResultActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(ShowResultActivity.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
 
 }

@@ -109,22 +109,17 @@
                     android:text="首页" />
 
                 <TextView
+                    android:id="@+id/base1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="管理" />
-
+                    android:text="基础评估" />
                 <TextView
+                    android:id="@+id/yuhou1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="我" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="设置" />
+                    android:text="预后评估" />
             </TableRow>
 
         </TableLayout>
