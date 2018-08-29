@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.R;
@@ -16,7 +17,7 @@ import com.example.chronicdisease.R;
 public class BaseElestical extends Activity {
     private Button txtBloodPressure,txtBloodSugar,txtBloodFat,txtWeight;
     private TextView txtTitle;
-    private TextView backHome;
+    private TextView backHome,base1,yuhou1;
    // private ImageView backHome;
     //private ImageView imgReturn;
     @Override
@@ -33,6 +34,8 @@ public class BaseElestical extends Activity {
 
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         backHome=(TextView)findViewById(R.id.home);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         //imgReturn=(ImageView)findViewById(R.id.imgReturn);
         //backHome.setImageResource(R.drawable.pic_1);
         //imgReturn.setImageResource(R.drawable.pic_2);
@@ -44,6 +47,8 @@ public class BaseElestical extends Activity {
 
         txtTitle.setText("基本评估");
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         //imgReturn.setOnClickListener(new imgReturnLis());
         txtBloodPressure.setOnClickListener(new bloodPressureLis());
         txtBloodSugar.setOnClickListener(new bloodSugarLis());
@@ -116,5 +121,25 @@ public class BaseElestical extends Activity {
             startActivity(intent);
 
         }
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(BaseElestical.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(BaseElestical.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
 }

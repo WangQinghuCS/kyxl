@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
 import com.example.chronicdisease.base_elestical.BloodPressure;
 
 import org.w3c.dom.Text;
@@ -29,7 +30,7 @@ public class CheckACCActivity extends Activity implements AdapterView.OnItemClic
     private TextView num_of_ACCTxv;
     private Context context;
     private ListView lv;
-    private TextView txtTitle,backHome;
+    private TextView txtTitle,backHome,base1,yuhou1;
     private ImageView imgReturn,imgGonext;
     private int pressure_level;
     private int num_of_danger;
@@ -47,12 +48,16 @@ public class CheckACCActivity extends Activity implements AdapterView.OnItemClic
         setContentView(R.layout.activity_check_acc);
         imgGonext=(ImageView) findViewById(R.id.imgGonext);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgGonext.setOnClickListener(new Gonext());
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("ACC");
         backHome = findViewById(R.id.backHome);
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         final String[] mItems4 = {"脑血管疾病","心脏疾病","肾脏疾病","外周血管疾病",
                 "视网膜病变"};
         lv = (ListView) findViewById(R.id.ACC_lv);
@@ -108,6 +113,26 @@ public class CheckACCActivity extends Activity implements AdapterView.OnItemClic
             finish();
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
         }
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckACCActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckACCActivity.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
     class backHomeLis implements View.OnClickListener{
 

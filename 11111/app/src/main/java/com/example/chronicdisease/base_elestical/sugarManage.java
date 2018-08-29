@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.R;
@@ -16,7 +17,7 @@ import com.example.chronicdisease.R;
 public class sugarManage extends Activity {
     private Button baseManage, ExManage;
     private TextView txtTitle;
-    private TextView backHome;
+    private TextView backHome,base1,yuhou1;
 
     // private ImageView backHome;
     private ImageView imgReturn;
@@ -35,6 +36,8 @@ public class sugarManage extends Activity {
 
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         backHome = (TextView) findViewById(R.id.home);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
         //backHome.setImageResource(R.drawable.pic_1);
         //imgReturn.setImageResource(R.drawable.home);
@@ -46,6 +49,8 @@ public class sugarManage extends Activity {
         txtTitle.setText("糖尿病管理");
         backHome.setOnClickListener(new backHomeLis());
         imgReturn.setOnClickListener(new imgReturnLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         baseManage.setOnClickListener(new baseManageLis());
         ExManage.setOnClickListener(new ExManageLis());
 
@@ -64,7 +69,26 @@ public class sugarManage extends Activity {
         }
 
     }
+    class base1Lis implements View.OnClickListener{
 
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(sugarManage.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(sugarManage.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
+    }
     /*class imgReturnLis  implements View.OnClickListener{
 
         public void onClick(View arg0) {

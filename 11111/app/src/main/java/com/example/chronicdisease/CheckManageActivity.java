@@ -12,10 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.util.Log;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
+
 public class CheckManageActivity extends Activity {
     private int result;
     private int level;
-    private TextView txtTitle,txtComplete,backHome;
+    private TextView txtTitle,txtComplete,backHome,base1,yuhou1;
     private ImageView imgReturn;
     private TextView textView10,textView11,textView12,textView13,textView14,textView15,
             textView16,textView17,textView18,textView19,textView1A,textView1B,textView1C,textView1D;
@@ -33,7 +35,12 @@ public class CheckManageActivity extends Activity {
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("管理");
         backHome = findViewById(R.id.backHome);
+        backHome=(TextView) findViewById(R.id.backHome);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         textView10 = findViewById(R.id.textView10);
         textView11 = findViewById(R.id.textView11);
         textView12 = findViewById(R.id.textView12);
@@ -135,6 +142,26 @@ public class CheckManageActivity extends Activity {
             // TODO Auto-generated method stub
             Intent it=new Intent();
             it.setClass(CheckManageActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckManageActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckManageActivity.this, CheckPressLevelActivity.class);
             startActivity(it);
         }
 

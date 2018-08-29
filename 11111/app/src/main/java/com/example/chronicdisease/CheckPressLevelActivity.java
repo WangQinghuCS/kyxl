@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chronicdisease.base_elestical.BaseElestical;
 import com.example.chronicdisease.base_elestical.BloodPressure;
 
 import org.w3c.dom.Text;
@@ -28,7 +29,7 @@ public class CheckPressLevelActivity extends Activity implements AdapterView.OnI
     private Context context;
     private int num_of_danger;
     private int pressure_level;
-    private TextView txtTitle,backHome;
+    private TextView txtTitle,backHome,base1,yuhou1;
     private ImageView imgReturn,imgGonext;
     private Intent it = new Intent();
 
@@ -38,12 +39,16 @@ public class CheckPressLevelActivity extends Activity implements AdapterView.OnI
         setContentView(R.layout.activity_check_press_level);
         imgGonext=(ImageView) findViewById(R.id.imgGonext);
         imgReturn=(ImageView)findViewById(R.id.imgReturn);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         imgGonext.setOnClickListener(new Gonext());
         imgReturn.setOnClickListener(new imgReturnLis());
         txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("血压等级");
         backHome = findViewById(R.id.backHome);
         backHome.setOnClickListener(new backHomeLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         final String[] mItems5 = {"一级","二级","三级"};
         ListView lv = (ListView) findViewById(R.id.pressure_lv);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.pressure_level_item,mItems5);
@@ -86,6 +91,26 @@ public class CheckPressLevelActivity extends Activity implements AdapterView.OnI
             // TODO Auto-generated method stub
             Intent it=new Intent();
             it.setClass(CheckPressLevelActivity.this, MainActivity.class);
+            startActivity(it);
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckPressLevelActivity.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(CheckPressLevelActivity.this, CheckPressLevelActivity.class);
             startActivity(it);
         }
 

@@ -1,5 +1,6 @@
 package com.example.chronicdisease.base_elestical;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.R;
@@ -19,7 +20,7 @@ public class bloodfat_assess extends Activity
 {
     private Button btnReturn;
     private ImageView imaReturn;
-    private TextView txtresult1,imaBack_home;
+    private TextView txtresult1,imaBack_home,base1,yuhou1;
     private TextView txtresult2;
     private TextView txtresult3;
     private TextView txtresult4;
@@ -75,6 +76,8 @@ public class bloodfat_assess extends Activity
         txtresult5=(TextView)findViewById(R.id.textView5);
         txtresult6=(TextView)findViewById(R.id.textView6);
         imaBack_home=(TextView) findViewById(R.id.backHome);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn=(ImageView)findViewById(R.id.imgReturn);
         imaReturn.setImageResource(R.drawable.home);
@@ -82,6 +85,8 @@ public class bloodfat_assess extends Activity
         txtTitle.setText("检测结果");
         imaBack_home.setOnClickListener(new backHomeLis());
         imaReturn.setOnClickListener(new imgReturnLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
         Intent it=getIntent();
         int count = 0;//用于统计正常指标的个数
         int count1 = 0;
@@ -199,6 +204,26 @@ public class bloodfat_assess extends Activity
             overridePendingTransition(R.anim.right_in, R.anim.right_out);
 
         }
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(bloodfat_assess.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(bloodfat_assess.this, CheckPressLevelActivity.class);
+            startActivity(it);
+        }
+
     }
 }
 

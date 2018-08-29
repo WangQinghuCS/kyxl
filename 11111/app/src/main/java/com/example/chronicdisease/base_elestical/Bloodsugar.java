@@ -1,5 +1,6 @@
 package com.example.chronicdisease.base_elestical;
 
+import com.example.chronicdisease.CheckPressLevelActivity;
 import com.example.chronicdisease.MainActivity;
 import com.example.chronicdisease.MyApp;
 import com.example.chronicdisease.R;
@@ -21,7 +22,7 @@ public class Bloodsugar extends Activity {
     private Button btnSubmit56;
     private ImageView imaReturn;
     private EditText edtBMP,edtATH;
-    private TextView result,txtTitle,imaBack_home,next;
+    private TextView result,txtTitle,imaBack_home,next,base1,yuhou1;
     private float BMP,ATH;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -35,6 +36,8 @@ public class Bloodsugar extends Activity {
         edtATH=(EditText)findViewById(R.id.sugareditText2);
         result=(TextView)findViewById(R.id.sugarresult1);
         imaBack_home=(TextView) findViewById(R.id.backHome);
+        base1=(TextView) findViewById(R.id.base1);
+        yuhou1=(TextView) findViewById(R.id.yuhou1);
         next=(TextView)findViewById(R.id.next);
         //imaBack_home.setImageResource(R.drawable.pic_1);
         imaReturn =(ImageView)findViewById(R.id.imgReturn);
@@ -45,6 +48,8 @@ public class Bloodsugar extends Activity {
         imaBack_home.setOnClickListener(new backHomeLis());
         next.setOnClickListener(new nextLis());
         imaReturn.setOnClickListener(new imgReturnLis());
+        base1.setOnClickListener(new base1Lis());
+        yuhou1.setOnClickListener(new yuhou1Lis());
 
     }
     class backHomeLis implements View.OnClickListener{
@@ -68,6 +73,26 @@ public class Bloodsugar extends Activity {
             startActivity(it);
             finish();
 
+        }
+
+    }
+    class base1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(Bloodsugar.this, BaseElestical.class);
+            startActivity(it);
+        }
+
+    }
+    class yuhou1Lis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it=new Intent();
+            it.setClass(Bloodsugar.this, CheckPressLevelActivity.class);
+            startActivity(it);
         }
 
     }
