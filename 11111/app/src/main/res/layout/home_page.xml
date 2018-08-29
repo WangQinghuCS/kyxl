@@ -49,28 +49,31 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:id="@+id/info_us"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:background="#aa2266"
-                    android:text="待定"
+                    android:text="关于我们"
                     android:gravity="center"/>
             </TableRow>
 
             <TableRow>
                 <TextView
+                    android:id="@+id/info_software"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:background="#45e15f"
-                    android:text="待定"
+                    android:text="关于软件"
                     android:gravity="center"/>
                 <TextView
+                    android:id="@+id/feedback"
                     android:layout_width="200dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:background="#3924a4"
-                    android:text="待定"
+                    android:text="反馈"
                     android:gravity="center"
                     android:layout_span="2"/>
             </TableRow>
@@ -96,17 +99,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="管理" />
+                android:text="基础评估" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="我" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="设置" />
+                android:text="预后评估" />
         </TableRow>
 
     </TableLayout>

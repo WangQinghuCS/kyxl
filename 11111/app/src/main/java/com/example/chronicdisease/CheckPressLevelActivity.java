@@ -1,5 +1,6 @@
 package com.example.chronicdisease;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckPressLevelActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class CheckPressLevelActivity extends Activity implements AdapterView.OnItemClickListener {
     ArrayList<String> selected = new ArrayList<>();
     //ArrayList<Integer> selected_position = new ArrayList<>();
     private Context context;

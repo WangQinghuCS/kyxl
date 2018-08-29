@@ -101,6 +101,7 @@
         </TableLayout>
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
@@ -108,6 +109,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />

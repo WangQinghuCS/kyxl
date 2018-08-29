@@ -30,6 +30,9 @@ public class MainActivity extends Activity {
    // private ImageView imgreturn;
     private TextView baseElestical;
     private TextView yuhouElestical;
+    private TextView info_us;
+    private TextView info_software;
+    private TextView feedback;
     //private LinearLayout baseElestical,yuhouElestical,healthManager,question,personInfo,settings;
     //This is a test Tag for Git
     @Override
@@ -49,6 +52,9 @@ public class MainActivity extends Activity {
         //yuhouElestical=(LinearLayout)findViewById(R.id.yuhou);
         baseElestical=(TextView) findViewById(R.id.baseElestical) ;
         yuhouElestical=(TextView) findViewById(R.id.yuhouElestical);
+        info_us = findViewById(R.id.info_us);
+        info_software = findViewById(R.id.info_software);
+        feedback = findViewById(R.id.feedback);
         //healthManager=(LinearLayout)findViewById(R.id.healthManager);
        // question=(LinearLayout)findViewById(R.id.question);
         //personInfo=(LinearLayout)findViewById(R.id.personInfo);
@@ -62,6 +68,9 @@ public class MainActivity extends Activity {
 
         baseElestical.setOnClickListener( new BaseElesticalLis());
         yuhouElestical.setOnClickListener(new YuhouElesticalLis());
+        info_software.setOnClickListener(new info_softwareLis());
+        info_us.setOnClickListener(new info_usLis());
+        feedback.setOnClickListener(new feedbackLis());
         //healthManager.setOnClickListener(new HealthManagerLis());
         //question.setOnClickListener(new QuestionLis());
         //personInfo.setOnClickListener(new PersonInfoLis());
@@ -94,6 +103,39 @@ public class MainActivity extends Activity {
             // TODO Auto-generated method stub
             Intent it2=new Intent();
             it2.setClass(MainActivity.this, CheckPressLevelActivity.class);
+            startActivity(it2);
+            overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
+        }
+
+    }
+    class info_usLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it2=new Intent();
+            it2.setClass(MainActivity.this, Info_us.class);
+            startActivity(it2);
+            overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
+        }
+
+    }
+    class info_softwareLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it2=new Intent();
+            it2.setClass(MainActivity.this, Info_software.class);
+            startActivity(it2);
+            overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
+        }
+
+    }
+    class feedbackLis implements View.OnClickListener{
+
+        public void onClick(View arg0) {
+            // TODO Auto-generated method stub
+            Intent it2=new Intent();
+            it2.setClass(MainActivity.this, Feedback.class);
             startActivity(it2);
             overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
         }

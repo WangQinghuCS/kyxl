@@ -9,15 +9,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@drawable/empty_block"
-        android:showDividers="middle"
         android:layout_weight="1"
-        android:background="@drawable/background"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f5f5"
+            android:background="#e4f2eb"
             android:orientation="horizontal">
 
 
@@ -46,6 +43,15 @@
                 />
 
         </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/empty_block"
+        android:showDividers="middle"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -88,12 +94,11 @@
                 android:text="血脂检测、视网膜检查、尿微量白蛋白检测、心电图检查、神经病变检查、足部检查:每年至少2次。。"
                 android:textSize="15sp"/>
         </LinearLayout>
-
+    </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#f5f5f5"
-
+            android:background="#e4f2eb"
             android:gravity="center_vertical"
             android:stretchColumns="0,1,2,3">
 

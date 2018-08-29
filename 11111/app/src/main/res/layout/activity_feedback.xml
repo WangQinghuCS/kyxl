@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".NumOfDangerActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,71 +32,62 @@
                 android:layout_weight="2"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="TextView"
-
+                android:textColor="#e2a617"
                 android:textSize="24sp" />
 
             <TextView
 
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical|center_horizontal"
-
-
+                android:layout_width="0dp"
+                android:layout_height="47dp"
                 android:layout_weight="1"
-                android:textSize="24sp" />
+                />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:divider="@drawable/empty_block"
+            android:showDividers="middle"
             android:layout_weight="1"
-            android:gravity="center"
             android:background="@drawable/background"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/baseManage"
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="#e2a617"
-                android:text="常规管理"
-                 />
-
-            <Button
-                android:id="@+id/ExManage"
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="#0d637f"
-                android:text="强化管理"
-                 />
-
+            <TextView
+                android:id="@+id/feedbackTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:textSize="24sp" />
 
         </LinearLayout>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="#e4f2eb"
-            android:stretchColumns="0,1,2,3"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:stretchColumns="0,1,2,3">
 
             <TableRow>
+
                 <TextView
-                    android:id="@+id/home"
+                    android:id="@+id/backHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="首页" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="管理" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="我" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,40 +99,4 @@
 
     </LinearLayout>
 
-    <!--
-        <ImageView
-            android:id="@+id/imgReturn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view2"
-            app:layout_constraintStart_toStartOf="@+id/view2"
-            app:srcCompat="@android:color/holo_red_dark" />
-
-        <ImageView
-            android:id="@+id/backHome"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view2"
-            app:layout_constraintEnd_toEndOf="@+id/view2"
-            app:srcCompat="@android:color/background_dark" />
-
-
-    -->
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="397dp"
-        android:layout_height="591dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

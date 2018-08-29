@@ -33,7 +33,10 @@
         <activity android:name=".CheckACCActivity" />
         <activity android:name=".CheckManageActivity" />
         <activity android:name=".ShowResultActivity" />
-        <activity android:name=".CheckPressLevelActivity"></activity>
+        <activity android:name=".CheckPressLevelActivity" />
+        <activity android:name=".Info_us" />
+        <activity android:name=".Info_software" />
+        <activity android:name=".Feedback"></activity>
     </application>
 
 </manifest>
